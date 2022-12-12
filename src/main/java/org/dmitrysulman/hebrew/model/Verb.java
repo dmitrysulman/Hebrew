@@ -5,6 +5,8 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @Table(name = "verbs")
@@ -15,5 +17,22 @@ public class Verb {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+
+    @Column(name = "infinitive", unique = true)
+    @NotNull
     private String infinitive;
+
+    @Column(name = "root")
+    @NotNull
+    private String root;
+
+    @Column(name = "binyan")
+    @NotNull
+    private String binyan;
+
+    @OneToMany(mappedBy = "verb", cascade = CascadeType.ALL)
+    private List<VerbForm> verbForms;
+
+    @OneToMany(mappedBy = "verb", cascade = CascadeType.ALL)
+    private List<VerbTranslation> verbTranslations;
 }

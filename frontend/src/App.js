@@ -1,9 +1,9 @@
-import {AddVerbForm} from "./components/AddVerbForm";
+import {AppContainer} from "./layout/Container";
 
 function App() {
   return (
     <div className="App">
-      <AddVerbForm />
+        <AppContainer />
     </div>
   );
 }

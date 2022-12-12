@@ -11,18 +11,54 @@
     <changeSet author="dmitrysulman" id="1">
         <createTable tableName="verbs">
             <column name="id" type="int" autoIncrement="true">
-                <constraints nullable="false" primaryKey="true" />
+                <constraints nullable="false" primaryKey="true"/>
             </column>
             <column name="infinitive" type="varchar(255)">
-                <constraints nullable="false" />
+                <constraints nullable="false" unique="true"/>
             </column>
-            <column name="created_at" type="datetime" defaultValueComputed="now()">
+            <column name="root" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
-            <column name="updated_at" type="datetime" defaultValueComputed="now()">
+            <column name="binyan" type="varchar(255)">
                 <constraints nullable="false"/>
             </column>
         </createTable>
-
+        <createTable tableName="verb_forms">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="tense" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="person" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="number" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gender" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="form" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="verb_id" type="int">
+                <constraints nullable="false" foreignKeyName="verb_forms_verb_id_fkey" referencedTableName="verbs" referencedColumnNames="id" deleteCascade="true"/>
+            </column>
+        </createTable>
+        <createTable tableName="verb_translations">
+            <column name="id" type="int" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="language" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="infinitive_translated" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="verb_id" type="int">
+                <constraints nullable="false" foreignKeyName="verb_translations_verb_id_fkey" referencedTableName="verbs" referencedColumnNames="id" deleteCascade="true"/>
+            </column>
+        </createTable>
     </changeSet>
 </databaseChangeLog>
