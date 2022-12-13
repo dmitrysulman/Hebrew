@@ -1,4 +1,4 @@
-package org.dmitrysulman.hebrew.binyan;
+package org.dmitrysulman.hebrew.words;
 
 public interface PresentTense {
     String getPresentTenseMaleSingular(String base);

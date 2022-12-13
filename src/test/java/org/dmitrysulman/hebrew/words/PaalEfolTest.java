@@ -1,4 +1,4 @@
-package org.dmitrysulman.hebrew.binyan;
+package org.dmitrysulman.hebrew.words;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -10,20 +10,20 @@ import static org.junit.jupiter.api.Assertions.*;
 @ExtendWith(MockitoExtension.class)
 class PaalEfolTest {
 
-    private String verb = "לומד";
+    private String verb = "כותב";
 
     @InjectMocks
     PaalEfol paalEfol;
 
     @Test
     void isThisBinyan() {
-        assertEquals(Binyan.BinyanName.PAAL_EFOL, paalEfol.getBinyanName());
+        assertEquals(VerbWord.BinyanName.PAAL_EFOL, paalEfol.getBinyanName());
         assertTrue(paalEfol.isThisBinyan(verb));
-        assertEquals("למד", paalEfol.getRoot(verb));
-        assertEquals("לומד", paalEfol.getPresentTenseMaleSingular(verb));
-        assertEquals("לומדת", paalEfol.getPresentTenseFemaleSingular(verb));
-        assertEquals("לומדים", paalEfol.getPresentTenseMalePlural(verb));
-        assertEquals("לומדות", paalEfol.getPresentTenseFemalePlural(verb));
+        assertEquals("כתב", paalEfol.getRoot(verb));
+        assertEquals("כותב", paalEfol.getPresentTenseMaleSingular(verb));
+        assertEquals("כותבת", paalEfol.getPresentTenseFemaleSingular(verb));
+        assertEquals("כותבים", paalEfol.getPresentTenseMalePlural(verb));
+        assertEquals("כותבות", paalEfol.getPresentTenseFemalePlural(verb));
 
         System.out.println(paalEfol.getRoot(verb));
         System.out.println("===============Present==================");

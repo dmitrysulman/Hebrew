@@ -1,4 +1,4 @@
-package org.dmitrysulman.hebrew.binyan;
+package org.dmitrysulman.hebrew.words;
 
 public interface PastTense {
     String getPastTenseSingularFirstPerson(String base);

@@ -1,9 +1,10 @@
 package org.dmitrysulman.hebrew.service;
 
-import org.dmitrysulman.hebrew.binyan.Binyan;
+import org.dmitrysulman.hebrew.dto.GetVerbFormsDto;
+import org.dmitrysulman.hebrew.model.Verb;
+import org.dmitrysulman.hebrew.words.VerbWord;
 import org.dmitrysulman.hebrew.dto.AddVerbDto;
 import org.dmitrysulman.hebrew.dto.GetVerbDto;
-import org.dmitrysulman.hebrew.model.Verb;
 import org.dmitrysulman.hebrew.repository.VerbRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import java.util.Optional;
 public class VerbServiceImpl implements VerbService {
     private final VerbRepository verbRepository;
     private final ModelMapper modelMapper;
-    private final Map<Binyan.BinyanName, Binyan> binyans;
+    private final Map<VerbWord.BinyanName, VerbWord> binyans;
 
     @Autowired
     public VerbServiceImpl(VerbRepository verbRepository, ModelMapper modelMapper) {
@@ -49,7 +50,26 @@ public class VerbServiceImpl implements VerbService {
     }
 
     @Override
-    public void registerBinyan(Binyan.BinyanName binyanName, Binyan binyan) {
-        binyans.put(binyanName, binyan);
+    public GetVerbFormsDto getVerbForms(String base) {
+        for (Map.Entry<VerbWord.BinyanName, VerbWord> binyan : binyans.entrySet()) {
+            if (binyan.getValue().isThisBinyan(base)) {
+                return constructVerbFormsDto(base, binyan.getValue());
+            }
+        }
+        return new GetVerbFormsDto();
+    }
+
+    private GetVerbFormsDto constructVerbFormsDto(String base, VerbWord binyan) {
+        return null;
+    }
+
+    @Override
+    public GetVerbFormsDto getVerbForms(String base, String binyan) {
+        return null;
+    }
+
+    @Override
+    public void registerBinyan(VerbWord.BinyanName binyanName, VerbWord verbWord) {
+        binyans.put(binyanName, verbWord);
     }
 }

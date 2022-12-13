@@ -1,4 +1,4 @@
-package org.dmitrysulman.hebrew.binyan;
+package org.dmitrysulman.hebrew.words;
 
 public interface FutureTense {
     String getFutureTenseSingularFirstPerson(String base);

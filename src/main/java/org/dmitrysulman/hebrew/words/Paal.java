@@ -1,6 +1,6 @@
-package org.dmitrysulman.hebrew.binyan;
+package org.dmitrysulman.hebrew.words;
 
-abstract class Paal implements Binyan {
+abstract class Paal implements VerbWord {
     @Override
     public String getRoot(String base) {
         char[] root = new char[3];

@@ -1,14 +1,12 @@
-package org.dmitrysulman.hebrew.binyan;
+package org.dmitrysulman.hebrew.words;
 
 import org.dmitrysulman.hebrew.service.VerbService;
 import org.springframework.beans.factory.annotation.Autowired;
 
-public interface Binyan extends PresentTense, PastTense, FutureTense {
+public interface VerbWord extends PresentTense, PastTense, FutureTense, Word {
     enum BinyanName {
         PAAL_EFOL, PAAL_EFAL, PAAL_PEYIUD, PAAL_AINVAFIUD, PIEL, HIFIL, HITPAEL, NIFAL
     }
-
-    String getRoot(String base);
 
     BinyanName getBinyanName();
 

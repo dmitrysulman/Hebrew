@@ -1,18 +1,22 @@
 package org.dmitrysulman.hebrew.service;
 
-import org.dmitrysulman.hebrew.binyan.Binyan;
+import org.dmitrysulman.hebrew.dto.GetVerbFormsDto;
+import org.dmitrysulman.hebrew.words.VerbWord;
 import org.dmitrysulman.hebrew.dto.AddVerbDto;
 import org.dmitrysulman.hebrew.dto.GetVerbDto;
-import org.dmitrysulman.hebrew.model.Verb;
 
 import java.util.List;
 
 public interface VerbService {
-    List<Verb> findAll();
+    List<org.dmitrysulman.hebrew.model.Verb> findAll();
 
     void save(AddVerbDto addVerbDto);
 
     GetVerbDto findById(int id);
 
-    void registerBinyan(Binyan.BinyanName binyanName, Binyan binyan);
+    GetVerbFormsDto getVerbForms(String base);
+
+    GetVerbFormsDto getVerbForms(String base, String binyan);
+
+    void registerBinyan(VerbWord.BinyanName binyanName, VerbWord verbWord);
 }
