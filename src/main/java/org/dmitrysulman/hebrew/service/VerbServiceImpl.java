@@ -53,19 +53,48 @@ public class VerbServiceImpl implements VerbService {
     public GetVerbFormsDto getVerbForms(String base) {
         for (Map.Entry<VerbWord.BinyanName, VerbWord> binyan : binyans.entrySet()) {
             if (binyan.getValue().isThisBinyan(base)) {
-                return constructVerbFormsDto(base, binyan.getValue());
+                return buildVerbFormsDto(base, binyan.getValue());
             }
         }
         return new GetVerbFormsDto();
     }
 
-    private GetVerbFormsDto constructVerbFormsDto(String base, VerbWord binyan) {
-        return null;
+    private GetVerbFormsDto buildVerbFormsDto(String base, VerbWord binyan) {
+        return GetVerbFormsDto.builder()
+                .binyan(binyan.getBinyanName().toString())
+                .root(binyan.getRoot(base))
+                .infinitive(binyan.getInfinitive(base))
+                .presentTenseMaleSingular(binyan.getPresentTenseMaleSingular(base))
+                .presentTenseFemaleSingular(binyan.getPresentTenseFemaleSingular(base))
+                .presentTenseMalePlural(binyan.getPresentTenseMalePlural(base))
+                .presentTenseFemalePlural(binyan.getPresentTenseFemalePlural(base))
+                .pastTenseSingularFirstPerson(binyan.getPastTenseSingularFirstPerson(base))
+                .pastTensePluralFirstPerson(binyan.getPastTensePluralFirstPerson(base))
+                .pastTenseMaleSingularSecondPerson(binyan.getPastTenseMaleSingularSecondPerson(base))
+                .pastTenseFemaleSingularSecondPerson(binyan.getPastTenseFemaleSingularSecondPerson(base))
+                .pastTenseMalePluralSecondPerson(binyan.getPastTenseMalePluralSecondPerson(base))
+                .pastTenseFemalePluralSecondPerson(binyan.getPastTenseFemalePluralSecondPerson(base))
+                .pastTenseMaleSingularThirdPerson(binyan.getPastTenseMaleSingularThirdPerson(base))
+                .pastTenseFemaleSingularThirdPerson(binyan.getPastTenseFemaleSingularThirdPerson(base))
+                .pastTensePluralThirdPerson(binyan.getPastTensePluralThirdPerson(base))
+                .futureTenseSingularFirstPerson(binyan.getFutureTenseSingularFirstPerson(base))
+                .futureTensePluralFirstPerson(binyan.getFutureTensePluralFirstPerson(base))
+                .futureTenseMaleSingularSecondPerson(binyan.getFutureTenseMaleSingularSecondPerson(base))
+                .futureTenseFemaleSingularSecondPerson(binyan.getFutureTenseFemaleSingularSecondPerson(base))
+                .futureTensePluralSecondPerson(binyan.getFutureTensePluralSecondPerson(base))
+                .futureTenseMaleSingularThirdPerson(binyan.getFutureTenseMaleSingularThirdPerson(base))
+                .futureTenseFemaleSingularThirdPerson(binyan.getFutureTenseFemaleSingularThirdPerson(base))
+                .futureTensePluralThirdPerson(binyan.getFutureTensePluralThirdPerson(base))
+                .build();
     }
 
     @Override
     public GetVerbFormsDto getVerbForms(String base, String binyan) {
-        return null;
+        try {
+            return buildVerbFormsDto(base, binyans.get(VerbWord.BinyanName.valueOf(binyan)));
+        } catch (IllegalArgumentException e) {
+            return null;
+        }
     }
 
     @Override

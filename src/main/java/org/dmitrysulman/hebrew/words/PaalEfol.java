@@ -13,60 +13,44 @@ public class PaalEfol extends Paal {
     public boolean isThisBinyan(String base) {
         return base.length() == 4 &&
                 base.charAt(1) == 'ו' &&
+                base.charAt(3) != 'ה' &&
+                base.charAt(2) != 'ה' &&
+                base.charAt(2) != 'א' &&
+                base.charAt(2) != 'ח' &&
+                base.charAt(2) != 'ע' &&
+                base.charAt(3) != 'א' &&
+                base.charAt(3) != 'ח' &&
+                base.charAt(3) != 'ע' &&
                 base.charAt(0) != 'י' &&
                 base.charAt(0) != 'נ' &&
                 base.charAt(0) != 'א' &&
-                base.charAt(0) != 'ה' &&
-                base.charAt(3) != 'ה';
-    }
-
-    private String getFutureBase(String base) {
-        char[] tmpBase = new char[4];
-        tmpBase[0] = base.charAt(0);
-        tmpBase[1] = base.charAt(2);
-        tmpBase[2] = 'ו';
-        tmpBase[3] = base.charAt(3);
-
-        return String.valueOf(tmpBase);
+                base.charAt(0) != 'ה';
     }
 
     @Override
-    public String getFutureTenseSingularFirstPerson(String base) {
-        return "א".concat(getFutureBase(base));
-    }
+    protected String getFutureBase(String base) {
+        char[] futureBase = new char[4];
+        String root = getRoot(base);
+        futureBase[0] = root.charAt(0);
+        futureBase[1] = root.charAt(1);
+        futureBase[2] = 'ו';
+        futureBase[3] = root.charAt(2);
 
-    @Override
-    public String getFutureTensePluralFirstPerson(String base) {
-        return "נ".concat(getFutureBase(base));
-    }
-
-    @Override
-    public String getFutureTenseMaleSingularSecondPerson(String base) {
-        return "ת".concat(getFutureBase(base));
+        return String.valueOf(futureBase);
     }
 
     @Override
     public String getFutureTenseFemaleSingularSecondPerson(String base) {
-        return "ת".concat(getRoot(base)).concat("י");
-    }
-
-    @Override
-    public String getFutureTenseMaleSingularThirdPerson(String base) {
-        return "י".concat(getFutureBase(base));
-    }
-
-    @Override
-    public String getFutureTenseFemaleSingularThirdPerson(String base) {
-        return "ת".concat(getFutureBase(base));
+        return changeSofit("ת".concat(getRoot(base)).concat("י"));
     }
 
     @Override
     public String getFutureTensePluralSecondPerson(String base) {
-        return "ת".concat(getRoot(base)).concat("ו");
+        return changeSofit("ת".concat(getRoot(base)).concat("ו"));
     }
 
     @Override
     public String getFutureTensePluralThirdPerson(String base) {
-        return "י".concat(getRoot(base)).concat("ו");
+        return changeSofit("י".concat(getRoot(base)).concat("ו"));
     }
 }
