@@ -3,6 +3,7 @@ package org.dmitrysulman.hebrew.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.dmitrysulman.hebrew.model.enums.Language;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

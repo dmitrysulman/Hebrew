@@ -3,6 +3,10 @@ package org.dmitrysulman.hebrew.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.dmitrysulman.hebrew.model.enums.Gender;
+import org.dmitrysulman.hebrew.model.enums.Number;
+import org.dmitrysulman.hebrew.model.enums.Person;
+import org.dmitrysulman.hebrew.model.enums.Tense;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;

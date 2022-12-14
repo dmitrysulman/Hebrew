@@ -1,4 +1,6 @@
-package org.dmitrysulman.hebrew.words;
+package org.dmitrysulman.hebrew.word.verb.paal;
+
+import org.dmitrysulman.hebrew.word.verb.VerbWord;
 
 abstract class Paal extends VerbWord {
     @Override

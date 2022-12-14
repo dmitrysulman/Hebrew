@@ -1,5 +1,7 @@
-package org.dmitrysulman.hebrew.words;
+package org.dmitrysulman.hebrew.word;
 
+import org.dmitrysulman.hebrew.word.verb.paal.PaalEfol;
+import org.dmitrysulman.hebrew.word.verb.VerbWord;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;

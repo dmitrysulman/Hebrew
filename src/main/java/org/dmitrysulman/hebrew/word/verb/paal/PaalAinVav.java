@@ -1,15 +1,15 @@
-package org.dmitrysulman.hebrew.words;
+package org.dmitrysulman.hebrew.word.verb.paal;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class PaalAinYod extends PaalAinVavYod {
+public class PaalAinVav extends PaalAinVavYod {
     @Override
     public String getRoot(String base) {
         char[] root = new char[3];
         if (base.length() == 2) {
             root[0] = base.charAt(0);
-            root[1] = 'י';
+            root[1] = 'ו';
             root[2] = base.charAt(1);
         }
 
@@ -18,6 +18,6 @@ public class PaalAinYod extends PaalAinVavYod {
 
     @Override
     public BinyanName getBinyanName() {
-        return BinyanName.PAAL_AINYOD;
+        return BinyanName.PAAL_AINVAV;
     }
 }

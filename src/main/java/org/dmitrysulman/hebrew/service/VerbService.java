@@ -1,7 +1,7 @@
 package org.dmitrysulman.hebrew.service;
 
-import org.dmitrysulman.hebrew.dto.GetVerbFormsDto;
-import org.dmitrysulman.hebrew.words.VerbWord;
+import org.dmitrysulman.hebrew.dto.verbFormsDto;
+import org.dmitrysulman.hebrew.word.verb.VerbWord;
 import org.dmitrysulman.hebrew.dto.AddVerbDto;
 import org.dmitrysulman.hebrew.dto.GetVerbDto;
 
@@ -14,9 +14,9 @@ public interface VerbService {
 
     GetVerbDto findById(int id);
 
-    GetVerbFormsDto getVerbForms(String base);
+    verbFormsDto getVerbForms(String base);
 
-    GetVerbFormsDto getVerbForms(String base, String binyan);
+    verbFormsDto getVerbForms(String base, String binyan);
 
     void registerBinyan(VerbWord.BinyanName binyanName, VerbWord verbWord);
 }

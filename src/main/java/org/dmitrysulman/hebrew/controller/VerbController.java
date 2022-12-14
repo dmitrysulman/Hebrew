@@ -2,7 +2,7 @@ package org.dmitrysulman.hebrew.controller;
 
 import org.dmitrysulman.hebrew.dto.AddVerbDto;
 import org.dmitrysulman.hebrew.dto.GetVerbDto;
-import org.dmitrysulman.hebrew.dto.GetVerbFormsDto;
+import org.dmitrysulman.hebrew.dto.verbFormsDto;
 import org.dmitrysulman.hebrew.model.Verb;
 import org.dmitrysulman.hebrew.service.VerbService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,9 +46,9 @@ public class VerbController {
     }
 
     @GetMapping("/get_forms/{verb}")
-    public GetVerbFormsDto getVerbForms(@PathVariable String verb,
-                                        @RequestParam(required = false) String binyan) {
-        GetVerbFormsDto verbForms;
+    public verbFormsDto getVerbForms(@PathVariable String verb,
+                                     @RequestParam(required = false) String binyan) {
+        verbFormsDto verbForms;
         if (binyan == null) {
             verbForms = verbService.getVerbForms(verb);
         } else {

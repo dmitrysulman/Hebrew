@@ -7,7 +7,7 @@ import lombok.*;
 @Getter
 @Setter
 @Builder
-public class GetVerbFormsDto {
+public class verbFormsDto {
     String root;
 
     String infinitive;

@@ -1,6 +1,7 @@
-package org.dmitrysulman.hebrew.words;
+package org.dmitrysulman.hebrew.word.verb;
 
 import org.dmitrysulman.hebrew.service.VerbService;
+import org.dmitrysulman.hebrew.word.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 
 abstract public class VerbWord implements PresentTense, PastTense, FutureTense, Word {

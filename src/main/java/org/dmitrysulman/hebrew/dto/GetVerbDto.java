@@ -9,5 +9,6 @@ import lombok.Setter;
 @Setter
 public class GetVerbDto {
     private int id;
+
     private String infinitive;
 }

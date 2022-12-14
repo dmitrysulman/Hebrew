@@ -1,4 +1,4 @@
-package org.dmitrysulman.hebrew.words;
+package org.dmitrysulman.hebrew.word.verb;
 
 public interface PresentTense {
     String getPresentTenseMaleSingular(String base);

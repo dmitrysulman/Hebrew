@@ -1,8 +1,8 @@
 package org.dmitrysulman.hebrew.service;
 
-import org.dmitrysulman.hebrew.dto.GetVerbFormsDto;
+import org.dmitrysulman.hebrew.dto.verbFormsDto;
 import org.dmitrysulman.hebrew.model.Verb;
-import org.dmitrysulman.hebrew.words.VerbWord;
+import org.dmitrysulman.hebrew.word.verb.VerbWord;
 import org.dmitrysulman.hebrew.dto.AddVerbDto;
 import org.dmitrysulman.hebrew.dto.GetVerbDto;
 import org.dmitrysulman.hebrew.repository.VerbRepository;
@@ -50,17 +50,17 @@ public class VerbServiceImpl implements VerbService {
     }
 
     @Override
-    public GetVerbFormsDto getVerbForms(String base) {
+    public verbFormsDto getVerbForms(String base) {
         for (Map.Entry<VerbWord.BinyanName, VerbWord> binyan : binyans.entrySet()) {
             if (binyan.getValue().isThisBinyan(base)) {
                 return buildVerbFormsDto(base, binyan.getValue());
             }
         }
-        return new GetVerbFormsDto();
+        return new verbFormsDto();
     }
 
-    private GetVerbFormsDto buildVerbFormsDto(String base, VerbWord binyan) {
-        return GetVerbFormsDto.builder()
+    private verbFormsDto buildVerbFormsDto(String base, VerbWord binyan) {
+        return verbFormsDto.builder()
                 .binyan(binyan.getBinyanName().toString())
                 .root(binyan.getRoot(base))
                 .infinitive(binyan.getInfinitive(base))
@@ -89,7 +89,7 @@ public class VerbServiceImpl implements VerbService {
     }
 
     @Override
-    public GetVerbFormsDto getVerbForms(String base, String binyan) {
+    public verbFormsDto getVerbForms(String base, String binyan) {
         try {
             return buildVerbFormsDto(base, binyans.get(VerbWord.BinyanName.valueOf(binyan)));
         } catch (IllegalArgumentException e) {
