@@ -489,7 +489,7 @@ function AddVerbForm() {
                             required
                             type="text"
                             name="futureTensePluralSecondPerson"
-                            placeholder="Male Plural Second Person"
+                            placeholder="Plural Second Person"
                             value={verbForms.verbFormDtos.futureTensePluralSecondPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
