@@ -1,8 +1,8 @@
 package org.dmitrysulman.hebrew.controller;
 
-import org.dmitrysulman.hebrew.dto.AddVerbDto;
-import org.dmitrysulman.hebrew.dto.GetVerbDto;
-import org.dmitrysulman.hebrew.dto.verbFormsDto;
+import org.dmitrysulman.hebrew.dto.BinyansDto;
+import org.dmitrysulman.hebrew.dto.VerbDto;
+import org.dmitrysulman.hebrew.dto.VerbFormsDto;
 import org.dmitrysulman.hebrew.model.Verb;
 import org.dmitrysulman.hebrew.service.VerbService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,31 +29,37 @@ public class VerbController {
     }
 
     @PostMapping("/add")
-    public ResponseEntity<HttpStatus> addVerb(@RequestBody AddVerbDto addVerbDto) {
-        verbService.save(addVerbDto);
+    public ResponseEntity<HttpStatus> addVerb(@RequestBody VerbDto verbDto) {
+        verbService.save(verbDto);
 
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping("/{id}")
-    public GetVerbDto getVerb(@PathVariable int id) {
-        GetVerbDto getVerbDto = verbService.findById(id);
-        if (getVerbDto == null) {
+    public VerbDto getVerb(@PathVariable int id) {
+        VerbDto verbDto = verbService.findById(id);
+        if (verbDto == null) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
         } else {
-            return getVerbDto;
+            return verbDto;
         }
     }
 
     @GetMapping("/get_forms/{verb}")
-    public verbFormsDto getVerbForms(@PathVariable String verb,
+    public VerbFormsDto getVerbForms(@PathVariable String verb,
                                      @RequestParam(required = false) String binyan) {
-        verbFormsDto verbForms;
+        VerbFormsDto verbForms;
         if (binyan == null) {
             verbForms = verbService.getVerbForms(verb);
         } else {
             verbForms = verbService.getVerbForms(verb, binyan);
         }
+
         return verbForms;
+    }
+
+    @GetMapping("/get_binyans")
+    public BinyansDto getBinyans() {
+        return verbService.getBinyans();
     }
 }

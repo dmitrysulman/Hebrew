@@ -1,8 +1,6 @@
 package org.dmitrysulman.hebrew.model;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 import org.dmitrysulman.hebrew.model.enums.Gender;
 import org.dmitrysulman.hebrew.model.enums.Number;
 import org.dmitrysulman.hebrew.model.enums.Person;
@@ -14,8 +12,10 @@ import javax.validation.constraints.NotNull;
 @Entity
 @Table(name = "verb_forms")
 @NoArgsConstructor
+@AllArgsConstructor
 @Getter
 @Setter
+@Builder
 public class VerbForm {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

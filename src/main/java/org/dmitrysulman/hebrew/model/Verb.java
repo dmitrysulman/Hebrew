@@ -3,6 +3,7 @@ package org.dmitrysulman.hebrew.model;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.dmitrysulman.hebrew.word.verb.VerbWord;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
@@ -26,9 +27,10 @@ public class Verb {
     @NotNull
     private String root;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "binyan")
     @NotNull
-    private String binyan;
+    private VerbWord.BinyanName binyan;
 
     @OneToMany(mappedBy = "verb", cascade = CascadeType.ALL)
     private List<VerbForm> verbForms;
