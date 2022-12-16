@@ -42,7 +42,7 @@ public class VerbServiceImpl implements VerbService {
         Verb verb = modelMapper.map(verbDto, Verb.class);
         VerbTranslation verbTranslation = new VerbTranslation();
         verbTranslation.setLanguage(Language.RU);
-        verbTranslation.setInfinitiveTranslated(verbDto.getInfinitive());
+        verbTranslation.setInfinitiveTranslated(verbDto.getTranslation());
         verbTranslation.setVerb(verb);
         verb.setVerbTranslations(List.of(verbTranslation));
         verb.getVerbForms().forEach(verbForm -> verbForm.setVerb(verb));
