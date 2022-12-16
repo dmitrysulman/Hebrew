@@ -134,7 +134,7 @@ function AddVerbForm() {
 
     return (
         <Col lg={{span: 10, offset: 1}}>
-            <Form className="mt-3" noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form className="mt-3 mb-3" noValidate validated={validated} onSubmit={handleSubmit}>
                 <fieldset className="row mb-3">
                     <Form.Group as={Col} controlId="formBase">
                         <Form.Label>Base</Form.Label>
