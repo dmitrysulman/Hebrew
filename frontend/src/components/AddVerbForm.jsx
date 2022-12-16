@@ -419,6 +419,133 @@ function AddVerbForm() {
                         </Form.Control.Feedback>
                     </Form.Group>
                 </fieldset>
+                <fieldset className="row mb-3">
+                    <legend>Future Tense</legend>
+                    <Form.Group as={Col} controlId="formFutureTenseSingularFirstPerson">
+                        <Form.Label>Singular First Person</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="futureTenseSingularFirstPerson"
+                            placeholder="Singular First Person"
+                            value={verbForms.verbFormDtos.futureTenseSingularFirstPerson.form}
+                            onChange={handleVerbFormsChange}
+                            dir="rtl"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid verb.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formFutureTensePluralFirstPerson">
+                        <Form.Label>Plural First Person</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="futureTensePluralFirstPerson"
+                            placeholder="Plural First Person"
+                            value={verbForms.verbFormDtos.futureTensePluralFirstPerson.form}
+                            onChange={handleVerbFormsChange}
+                            dir="rtl"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid verb.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                </fieldset>
+                <fieldset className="row mb-3">
+                    <Form.Group className="col-lg-3" controlId="formFutureTenseMaleSingularSecondPerson">
+                        <Form.Label>Male Singular Second Person</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="futureTenseMaleSingularSecondPerson"
+                            placeholder="Male Singular Second Person"
+                            value={verbForms.verbFormDtos.futureTenseMaleSingularSecondPerson.form}
+                            onChange={handleVerbFormsChange}
+                            dir="rtl"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid verb.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group className="col-lg-3" controlId="formFutureTenseFemaleSingularSecondPerson">
+                        <Form.Label>Female Singular Second Person</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="futureTenseFemaleSingularSecondPerson"
+                            placeholder="Female Singular Second Person"
+                            value={verbForms.verbFormDtos.futureTenseFemaleSingularSecondPerson.form}
+                            onChange={handleVerbFormsChange}
+                            dir="rtl"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid verb.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formFutureTensePluralSecondPerson">
+                        <Form.Label>Plural Second Person</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="futureTensePluralSecondPerson"
+                            placeholder="Male Plural Second Person"
+                            value={verbForms.verbFormDtos.futureTensePluralSecondPerson.form}
+                            onChange={handleVerbFormsChange}
+                            dir="rtl"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid verb.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                </fieldset>
+                <fieldset className="row mb-3">
+                    <Form.Group className="col-lg-3" controlId="formFutureTenseMaleSingularThirdPerson">
+                        <Form.Label>Male Singular Third Person</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="futureTenseMaleSingularThirdPerson"
+                            placeholder="Male Singular Third Person"
+                            value={verbForms.verbFormDtos.futureTenseMaleSingularThirdPerson.form}
+                            onChange={handleVerbFormsChange}
+                            dir="rtl"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid verb.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group className="col-lg-3" controlId="formFutureTenseFemaleSingularThirdPerson">
+                        <Form.Label>Female Singular Third Person</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="futureTenseFemaleSingularThirdPerson"
+                            placeholder="Female Singular Third Person"
+                            value={verbForms.verbFormDtos.futureTenseFemaleSingularThirdPerson.form}
+                            onChange={handleVerbFormsChange}
+                            dir="rtl"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid verb.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formFutureTensePluralThirdPerson">
+                        <Form.Label>Plural Third Person</Form.Label>
+                        <Form.Control
+                            required
+                            type="text"
+                            name="futureTensePluralThirdPerson"
+                            placeholder="Plural Third Person"
+                            value={verbForms.verbFormDtos.futureTensePluralThirdPerson.form}
+                            onChange={handleVerbFormsChange}
+                            dir="rtl"
+                        />
+                        <Form.Control.Feedback type="invalid">
+                            Please provide a valid verb.
+                        </Form.Control.Feedback>
+                    </Form.Group>
+                </fieldset>
                 <Button type="submit">
                     Submit
                 </Button>
