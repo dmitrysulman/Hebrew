@@ -1,9 +1,9 @@
 package org.dmitrysulman.hebrew.controller;
 
 import org.dmitrysulman.hebrew.dto.BinyansDto;
+import org.dmitrysulman.hebrew.dto.LanguagesDto;
 import org.dmitrysulman.hebrew.dto.VerbDto;
 import org.dmitrysulman.hebrew.dto.VerbFormsDto;
-import org.dmitrysulman.hebrew.model.Verb;
 import org.dmitrysulman.hebrew.service.VerbService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -24,7 +24,7 @@ public class VerbController {
     }
 
     @GetMapping("")
-    public List<Verb> getAllVerbs() {
+    public List<VerbDto> getAllVerbs() {
         return verbService.findAll();
     }
 
@@ -61,5 +61,10 @@ public class VerbController {
     @GetMapping("/get_binyans")
     public BinyansDto getBinyans() {
         return verbService.getBinyans();
+    }
+
+    @GetMapping("/get_languages")
+    public LanguagesDto getLanguages() {
+        return verbService.getLanguages();
     }
 }

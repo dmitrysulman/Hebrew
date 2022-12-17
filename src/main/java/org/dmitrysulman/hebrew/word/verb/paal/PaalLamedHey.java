@@ -18,8 +18,8 @@ public class PaalLamedHey extends Paal {
     }
 
     @Override
-    public BinyanName getBinyanName() {
-        return BinyanName.PAAL_LAMEDHEY;
+    public Binyan getBinyanName() {
+        return Binyan.PAAL_LAMEDHEY;
     }
 
     @Override

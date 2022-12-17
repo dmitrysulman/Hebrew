@@ -5,7 +5,7 @@ import org.dmitrysulman.hebrew.word.Word;
 import org.springframework.beans.factory.annotation.Autowired;
 
 abstract public class VerbWord implements PresentTense, PastTense, FutureTense, Word {
-    public enum BinyanName {
+    public enum Binyan {
         PAAL_EFOL,
         PAAL_EFAL,
         PAAL_PEYYOD,
@@ -20,7 +20,7 @@ abstract public class VerbWord implements PresentTense, PastTense, FutureTense, 
         NIFAL
     }
 
-    abstract public BinyanName getBinyanName();
+    abstract public Binyan getBinyanName();
 
     abstract public boolean isThisBinyan(String base);
 

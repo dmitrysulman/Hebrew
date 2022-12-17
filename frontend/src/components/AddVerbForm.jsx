@@ -8,8 +8,11 @@ const clearVerbForms = {
     infinitive: "",
     binyan: "",
     root: "",
-    translation: "",
-    verbFormDtos: {
+    verbTranslations: [{
+        language: "",
+        infinitiveTranslated: "",
+    }],
+    verbForms: {
         futureTenseFemaleSingularSecondPerson: {form: ""},
         futureTenseFemaleSingularThirdPerson: {form: ""},
         futureTenseMaleSingularSecondPerson: {form: ""},
@@ -36,6 +39,7 @@ const clearVerbForms = {
 
 function AddVerbForm() {
     const [binyansOptions, setBinyansOptions] = useState({});
+    const [languagesOptions, setLanguagesOptions] = useState({});
     const [verbForms, setVerbForms] = useState(clearVerbForms);
     const [validated, setValidated] = useState(false);
     const base = useRef(null);
@@ -43,12 +47,11 @@ function AddVerbForm() {
     const handleSubmit = (event) => {
         const form = event.currentTarget;
         const data = {};
-        data.base = verbForms.base;
         data.infinitive = verbForms.infinitive;
         data.binyan = verbForms.binyan;
         data.root = verbForms.root;
-        data.translation = verbForms.translation;
-        data.verbForms = Object.values(verbForms.verbFormDtos);
+        data.verbTranslations = verbForms.verbTranslations;
+        data.verbForms = Object.values(verbForms.verbForms);
         event.preventDefault();
         setValidated(true);
         if (form.checkValidity() === true) {
@@ -82,14 +85,23 @@ function AddVerbForm() {
 
     const handleVerbFormsChange = (event) => {
         setVerbForms((prevVerbForms) => {
-            prevVerbForms.verbFormDtos[event.target.name].form = event.target.value;
+            prevVerbForms.verbForms[event.target.name].form = event.target.value;
             return {
                 ...prevVerbForms,
             }
         });
     }
 
-    function getVerbForms(binayn) {
+    const handleTranslationChange = (event) => {
+        setVerbForms((prevVerbForms) => {
+            prevVerbForms.verbTranslations[0][event.target.name] = event.target.value;
+            return {
+                ...prevVerbForms,
+            }
+        });
+    }
+
+    const getVerbForms = (binayn) => {
         fetch(`${API_URL}/verbs/get_forms/${verbForms.base}${binayn ? "?binyan=" + binayn : ""}`, {
             method: 'GET',
             headers: {
@@ -130,6 +142,22 @@ function AddVerbForm() {
                     }));
                 }
             })
+
+        fetch(`${API_URL}/verbs/get_languages`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+        })
+            .then(response => response.json())
+            .then(data => {
+                for (let [k, v] of Object.entries(data.languages)) {
+                    setLanguagesOptions((prevOptions) => ({
+                        ...prevOptions,
+                        [k]: v,
+                    }));
+                }
+            })
     }, [])
 
     return (
@@ -158,14 +186,28 @@ function AddVerbForm() {
                         <Form.Control
                             required
                             type="text"
-                            name="translation"
+                            name="infinitiveTranslated"
                             placeholder="Translation"
-                            value={verbForms.translation}
-                            onChange={handleInputChange}
+                            value={verbForms.verbTranslations[0].infinitiveTranslated}
+                            onChange={handleTranslationChange}
                         />
                         <Form.Control.Feedback type="invalid">
                             Please provide a valid verb.
                         </Form.Control.Feedback>
+                    </Form.Group>
+                    <Form.Group as={Col} controlId="formLanguage">
+                        <Form.Label>Language</Form.Label>
+                        <Form.Select
+                            required
+                            name="language"
+                            value={verbForms.verbTranslations[0].language}
+                            onChange={handleTranslationChange}
+                        >
+                            <option disabled value="">Select language</option>
+                            {Object.entries(languagesOptions).map(item => (
+                                <option key={item[0]} value={item[1]}>{item[1]}</option>
+                            ))}
+                        </Form.Select>
                     </Form.Group>
                 </fieldset>
                 <fieldset className="row mb-3">
@@ -177,7 +219,7 @@ function AddVerbForm() {
                             value={verbForms.binyan}
                             onChange={handleInputChange}
                         >
-                            <option disabled>Select binyan</option>
+                            <option disabled value="">Select binyan</option>
                             {Object.entries(binyansOptions).map(item => (
                                 <option key={item[0]} value={item[1]}>{item[1]}</option>
                             ))}
@@ -223,7 +265,7 @@ function AddVerbForm() {
                             type="text"
                             name="presentTenseMaleSingular"
                             placeholder="Male Singular"
-                            value={verbForms.verbFormDtos.presentTenseMaleSingular.form}
+                            value={verbForms.verbForms.presentTenseMaleSingular.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -238,7 +280,7 @@ function AddVerbForm() {
                             type="text"
                             name="presentTenseFemaleSingular"
                             placeholder="Female Singular"
-                            value={verbForms.verbFormDtos.presentTenseFemaleSingular.form}
+                            value={verbForms.verbForms.presentTenseFemaleSingular.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -253,7 +295,7 @@ function AddVerbForm() {
                             type="text"
                             name="presentTenseMalePlural"
                             placeholder="Male Plural"
-                            value={verbForms.verbFormDtos.presentTenseMalePlural.form}
+                            value={verbForms.verbForms.presentTenseMalePlural.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -268,7 +310,7 @@ function AddVerbForm() {
                             type="text"
                             name="presentTenseFemalePlural"
                             placeholder="Female Plural"
-                            value={verbForms.verbFormDtos.presentTenseFemalePlural.form}
+                            value={verbForms.verbForms.presentTenseFemalePlural.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -286,7 +328,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTenseSingularFirstPerson"
                             placeholder="Singular First Person"
-                            value={verbForms.verbFormDtos.pastTenseSingularFirstPerson.form}
+                            value={verbForms.verbForms.pastTenseSingularFirstPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -301,7 +343,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTensePluralFirstPerson"
                             placeholder="Plural First Person"
-                            value={verbForms.verbFormDtos.pastTensePluralFirstPerson.form}
+                            value={verbForms.verbForms.pastTensePluralFirstPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -318,7 +360,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTenseMaleSingularSecondPerson"
                             placeholder="Male Singular Second Person"
-                            value={verbForms.verbFormDtos.pastTenseMaleSingularSecondPerson.form}
+                            value={verbForms.verbForms.pastTenseMaleSingularSecondPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -333,7 +375,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTenseFemaleSingularSecondPerson"
                             placeholder="Female Singular Second Person"
-                            value={verbForms.verbFormDtos.pastTenseFemaleSingularSecondPerson.form}
+                            value={verbForms.verbForms.pastTenseFemaleSingularSecondPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -348,7 +390,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTenseMalePluralSecondPerson"
                             placeholder="Male Plural Second Person"
-                            value={verbForms.verbFormDtos.pastTenseMalePluralSecondPerson.form}
+                            value={verbForms.verbForms.pastTenseMalePluralSecondPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -363,7 +405,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTenseFemalePluralSecondPerson"
                             placeholder="Female Plural Second Person"
-                            value={verbForms.verbFormDtos.pastTenseFemalePluralSecondPerson.form}
+                            value={verbForms.verbForms.pastTenseFemalePluralSecondPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -380,7 +422,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTenseMaleSingularThirdPerson"
                             placeholder="Male Singular Third Person"
-                            value={verbForms.verbFormDtos.pastTenseMaleSingularThirdPerson.form}
+                            value={verbForms.verbForms.pastTenseMaleSingularThirdPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -395,7 +437,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTenseFemaleSingularThirdPerson"
                             placeholder="Female Singular Third Person"
-                            value={verbForms.verbFormDtos.pastTenseFemaleSingularThirdPerson.form}
+                            value={verbForms.verbForms.pastTenseFemaleSingularThirdPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -410,7 +452,7 @@ function AddVerbForm() {
                             type="text"
                             name="pastTensePluralThirdPerson"
                             placeholder="Plural Third Person"
-                            value={verbForms.verbFormDtos.pastTensePluralThirdPerson.form}
+                            value={verbForms.verbForms.pastTensePluralThirdPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -428,7 +470,7 @@ function AddVerbForm() {
                             type="text"
                             name="futureTenseSingularFirstPerson"
                             placeholder="Singular First Person"
-                            value={verbForms.verbFormDtos.futureTenseSingularFirstPerson.form}
+                            value={verbForms.verbForms.futureTenseSingularFirstPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -443,7 +485,7 @@ function AddVerbForm() {
                             type="text"
                             name="futureTensePluralFirstPerson"
                             placeholder="Plural First Person"
-                            value={verbForms.verbFormDtos.futureTensePluralFirstPerson.form}
+                            value={verbForms.verbForms.futureTensePluralFirstPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -460,7 +502,7 @@ function AddVerbForm() {
                             type="text"
                             name="futureTenseMaleSingularSecondPerson"
                             placeholder="Male Singular Second Person"
-                            value={verbForms.verbFormDtos.futureTenseMaleSingularSecondPerson.form}
+                            value={verbForms.verbForms.futureTenseMaleSingularSecondPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -475,7 +517,7 @@ function AddVerbForm() {
                             type="text"
                             name="futureTenseFemaleSingularSecondPerson"
                             placeholder="Female Singular Second Person"
-                            value={verbForms.verbFormDtos.futureTenseFemaleSingularSecondPerson.form}
+                            value={verbForms.verbForms.futureTenseFemaleSingularSecondPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -490,7 +532,7 @@ function AddVerbForm() {
                             type="text"
                             name="futureTensePluralSecondPerson"
                             placeholder="Plural Second Person"
-                            value={verbForms.verbFormDtos.futureTensePluralSecondPerson.form}
+                            value={verbForms.verbForms.futureTensePluralSecondPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -507,7 +549,7 @@ function AddVerbForm() {
                             type="text"
                             name="futureTenseMaleSingularThirdPerson"
                             placeholder="Male Singular Third Person"
-                            value={verbForms.verbFormDtos.futureTenseMaleSingularThirdPerson.form}
+                            value={verbForms.verbForms.futureTenseMaleSingularThirdPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -522,7 +564,7 @@ function AddVerbForm() {
                             type="text"
                             name="futureTenseFemaleSingularThirdPerson"
                             placeholder="Female Singular Third Person"
-                            value={verbForms.verbFormDtos.futureTenseFemaleSingularThirdPerson.form}
+                            value={verbForms.verbForms.futureTenseFemaleSingularThirdPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />
@@ -537,7 +579,7 @@ function AddVerbForm() {
                             type="text"
                             name="futureTensePluralThirdPerson"
                             placeholder="Plural Third Person"
-                            value={verbForms.verbFormDtos.futureTensePluralThirdPerson.form}
+                            value={verbForms.verbForms.futureTensePluralThirdPerson.form}
                             onChange={handleVerbFormsChange}
                             dir="rtl"
                         />

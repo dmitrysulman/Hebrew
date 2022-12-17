@@ -19,7 +19,7 @@ class PaalEfolTest {
 
     @Test
     void isThisBinyan() {
-        assertEquals(VerbWord.BinyanName.PAAL_EFOL, paalEfol.getBinyanName());
+        assertEquals(VerbWord.Binyan.PAAL_EFOL, paalEfol.getBinyanName());
         assertTrue(paalEfol.isThisBinyan(verb));
         assertEquals("כתב", paalEfol.getRoot(verb));
         assertEquals("כותב", paalEfol.getPresentTenseMaleSingular(verb));

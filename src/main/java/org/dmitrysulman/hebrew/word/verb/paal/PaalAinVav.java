@@ -17,7 +17,7 @@ public class PaalAinVav extends PaalAinVavYod {
     }
 
     @Override
-    public BinyanName getBinyanName() {
-        return BinyanName.PAAL_AINVAV;
+    public Binyan getBinyanName() {
+        return Binyan.PAAL_AINVAV;
     }
 }

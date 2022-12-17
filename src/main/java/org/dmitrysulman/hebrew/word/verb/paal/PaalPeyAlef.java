@@ -5,8 +5,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class PaalPeyAlef extends Paal {
     @Override
-    public BinyanName getBinyanName() {
-        return BinyanName.PAAL_PEYALEF;
+    public Binyan getBinyanName() {
+        return Binyan.PAAL_PEYALEF;
     }
 
     @Override

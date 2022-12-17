@@ -27,8 +27,8 @@ public class PaalPeyYod extends Paal {
     }
 
     @Override
-    public BinyanName getBinyanName() {
-        return BinyanName.PAAL_PEYYOD;
+    public Binyan getBinyanName() {
+        return Binyan.PAAL_PEYYOD;
     }
 
     @Override

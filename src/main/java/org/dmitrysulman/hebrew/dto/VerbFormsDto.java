@@ -16,5 +16,5 @@ public class VerbFormsDto {
     
     private String binyan;
 
-    private Map<String, VerbFormDto> verbFormDtos;
+    private Map<String, VerbFormDto> verbForms;
 }

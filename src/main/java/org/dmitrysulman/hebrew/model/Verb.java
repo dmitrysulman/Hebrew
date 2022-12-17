@@ -30,7 +30,7 @@ public class Verb {
     @Enumerated(EnumType.STRING)
     @Column(name = "binyan")
     @NotNull
-    private VerbWord.BinyanName binyan;
+    private VerbWord.Binyan binyan;
 
     @OneToMany(mappedBy = "verb", cascade = CascadeType.ALL)
     private List<VerbForm> verbForms;

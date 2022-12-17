@@ -1,14 +1,10 @@
 package org.dmitrysulman.hebrew.service;
 
-import org.dmitrysulman.hebrew.dto.BinyansDto;
-import org.dmitrysulman.hebrew.dto.VerbFormDto;
-import org.dmitrysulman.hebrew.dto.VerbFormsDto;
+import org.dmitrysulman.hebrew.dto.*;
 import org.dmitrysulman.hebrew.model.Verb;
-import org.dmitrysulman.hebrew.model.VerbTranslation;
 import org.dmitrysulman.hebrew.model.enums.*;
 import org.dmitrysulman.hebrew.model.enums.Number;
 import org.dmitrysulman.hebrew.word.verb.VerbWord;
-import org.dmitrysulman.hebrew.dto.VerbDto;
 import org.dmitrysulman.hebrew.repository.VerbRepository;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +18,7 @@ import java.util.*;
 public class VerbServiceImpl implements VerbService {
     private final VerbRepository verbRepository;
     private final ModelMapper modelMapper;
-    private final Map<VerbWord.BinyanName, VerbWord> binyans;
+    private final Map<VerbWord.Binyan, VerbWord> binyans;
 
     @Autowired
     public VerbServiceImpl(VerbRepository verbRepository, ModelMapper modelMapper) {
@@ -32,20 +28,19 @@ public class VerbServiceImpl implements VerbService {
     }
 
     @Override
-    public List<Verb> findAll() {
-        return verbRepository.findAll();
+    public List<VerbDto> findAll() {
+        List<Verb> verbs = verbRepository.findAll();
+        return verbs.stream()
+                .map(verb -> modelMapper.map(verb, VerbDto.class))
+                .toList();
     }
 
     @Override
     @Transactional
     public void save(VerbDto verbDto) {
         Verb verb = modelMapper.map(verbDto, Verb.class);
-        VerbTranslation verbTranslation = new VerbTranslation();
-        verbTranslation.setLanguage(Language.RU);
-        verbTranslation.setInfinitiveTranslated(verbDto.getTranslation());
-        verbTranslation.setVerb(verb);
-        verb.setVerbTranslations(List.of(verbTranslation));
         verb.getVerbForms().forEach(verbForm -> verbForm.setVerb(verb));
+        verb.getVerbTranslations().forEach(verbTranslation -> verbTranslation.setVerb(verb));
         verbRepository.save(verb);
     }
 
@@ -75,7 +70,7 @@ public class VerbServiceImpl implements VerbService {
 
     @Override
     public VerbFormsDto getVerbForms(String base) {
-        for (Map.Entry<VerbWord.BinyanName, VerbWord> binyan : binyans.entrySet()) {
+        for (Map.Entry<VerbWord.Binyan, VerbWord> binyan : binyans.entrySet()) {
             if (binyan.getValue().isThisBinyan(base)) {
                 return buildVerbFormsDto(base, binyan.getValue());
             }
@@ -198,14 +193,14 @@ public class VerbServiceImpl implements VerbService {
                 .binyan(binyan.getBinyanName().toString())
                 .root(binyan.getRoot(base))
                 .infinitive(binyan.getInfinitive(base))
-                .verbFormDtos(verbFormDtos)
+                .verbForms(verbFormDtos)
                 .build();
     }
 
     @Override
     public VerbFormsDto getVerbForms(String base, String binyan) {
         try {
-            return buildVerbFormsDto(base, binyans.get(VerbWord.BinyanName.valueOf(binyan)));
+            return buildVerbFormsDto(base, binyans.get(VerbWord.Binyan.valueOf(binyan)));
         } catch (IllegalArgumentException e) {
             return null;
         }
@@ -214,14 +209,23 @@ public class VerbServiceImpl implements VerbService {
     @Override
     public BinyansDto getBinyans() {
         BinyansDto binyansDto = new BinyansDto();
-        for (VerbWord.BinyanName binyanName : VerbWord.BinyanName.values()) {
-            binyansDto.getBinyans().put(binyanName.name(), binyanName.toString());
+        for (VerbWord.Binyan binyan : VerbWord.Binyan.values()) {
+            binyansDto.getBinyans().put(binyan.name(), binyan.toString());
         }
         return binyansDto;
     }
 
     @Override
-    public void registerBinyan(VerbWord.BinyanName binyanName, VerbWord verbWord) {
-        binyans.put(binyanName, verbWord);
+    public void registerBinyan(VerbWord.Binyan binyan, VerbWord verbWord) {
+        binyans.put(binyan, verbWord);
+    }
+
+    @Override
+    public LanguagesDto getLanguages() {
+        LanguagesDto languagesDto = new LanguagesDto();
+        for (Language language : Language.values()) {
+            languagesDto.getLanguages().put(language.name(), language.toString());
+        }
+        return languagesDto;
     }
 }

@@ -18,7 +18,8 @@ public class VerbDto {
 
     private String binyan;
 
-    private String translation;
-
     private List<VerbFormDto> verbForms;
+
+    private List<VerbTranslationDto> verbTranslations;
+
 }
