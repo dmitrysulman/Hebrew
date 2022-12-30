@@ -1,6 +1,8 @@
 import React, {useState, useEffect, useRef} from "react";
 import {Button, Col, Form} from "react-bootstrap";
 
+import {getVerbForms, getBinyans, getLanguages} from "../api";
+
 const API_URL = process.env.REACT_APP_API_URL;
 
 const clearVerbForms = {
@@ -36,6 +38,10 @@ const clearVerbForms = {
         presentTenseMaleSingular: {form: ""},
     }
 };
+
+export async function loader() {
+
+}
 
 function AddVerbForm() {
     const [binyansOptions, setBinyansOptions] = useState({});
@@ -75,7 +81,7 @@ function AddVerbForm() {
 
     const handleInputChange = (event) => {
         if (event.target.name === "binyan") {
-            getVerbForms(event.target.value);
+            fillVerbFormsFromApi(event.target.value);
         }
         setVerbForms({
             ...verbForms,
@@ -101,63 +107,42 @@ function AddVerbForm() {
         });
     }
 
-    const getVerbForms = (binayn) => {
-        fetch(`${API_URL}/verbs/get_forms/${verbForms.base}${binayn ? "?binyan=" + binayn : ""}`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-        })
-            .then(response => response.json())
-            .then(data => {
-                for (let [k, v] of Object.entries(data)) {
-                    setVerbForms((prevVerbForms) => ({
-                        ...prevVerbForms,
-                        [k]: v,
-                    }));
-                }
-            });
+    const fillVerbFormsFromApi = (binyan) => {
+        getVerbForms(verbForms.base, binyan).then(data => {
+            for (let [k, v] of Object.entries(data)) {
+                setVerbForms((prevVerbForms) => ({
+                    ...prevVerbForms,
+                    [k]: v,
+                }));
+            }
+        });
     }
 
     const handleBaseBlur = () => {
         if (verbForms.base.length > 1) {
-            getVerbForms();
+            fillVerbFormsFromApi();
         }
     }
 
     useEffect(() => {
         base.current.focus();
-        fetch(`${API_URL}/verbs/get_binyans`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+        getBinyans().then(data => {
+            for (let [k, v] of Object.entries(data.binyans)) {
+                setBinyansOptions((prevOptions) => ({
+                    ...prevOptions,
+                    [k]: v,
+                }));
+            }
         })
-            .then(response => response.json())
-            .then(data => {
-                for (let [k, v] of Object.entries(data.binyans)) {
-                    setBinyansOptions((prevOptions) => ({
-                        ...prevOptions,
-                        [k]: v,
-                    }));
-                }
-            })
 
-        fetch(`${API_URL}/verbs/get_languages`, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            },
+        getLanguages().then(data => {
+            for (let [k, v] of Object.entries(data.languages)) {
+                setLanguagesOptions((prevOptions) => ({
+                    ...prevOptions,
+                    [k]: v,
+                }));
+            }
         })
-            .then(response => response.json())
-            .then(data => {
-                for (let [k, v] of Object.entries(data.languages)) {
-                    setLanguagesOptions((prevOptions) => ({
-                        ...prevOptions,
-                        [k]: v,
-                    }));
-                }
-            })
     }, [])
 
     return (
@@ -596,4 +581,4 @@ function AddVerbForm() {
     );
 }
 
-export {AddVerbForm}
+export default AddVerbForm
