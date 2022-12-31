@@ -1,9 +1,8 @@
 import React, {useState, useEffect, useRef} from "react";
 import {Button, Col, Form} from "react-bootstrap";
 
-import {getVerbForms, getBinyans, getLanguages} from "../api";
-
-const API_URL = process.env.REACT_APP_API_URL;
+import {getVerbForms, getBinyans, getLanguages, addVerb} from "../api";
+import {Await, Form as RouterForm, defer, useLoaderData, redirect} from "react-router-dom";
 
 const clearVerbForms = {
     base: "",
@@ -11,7 +10,7 @@ const clearVerbForms = {
     binyan: "",
     root: "",
     verbTranslations: [{
-        language: "",
+        language: "RU",
         infinitiveTranslated: "",
     }],
     verbForms: {
@@ -39,43 +38,53 @@ const clearVerbForms = {
     }
 };
 
-export async function loader() {
+export function loader() {
+    let binyans = getBinyans();
+    let languages = getLanguages();
+    return defer({binyans, languages});
+}
 
+export async function action({request}) {
+    let formData = await request.formData();
+    console.log(Object.fromEntries(formData));
+    await addVerb(Object.fromEntries(formData));
+    return redirect("/");
 }
 
 function AddVerbForm() {
-    const [binyansOptions, setBinyansOptions] = useState({});
-    const [languagesOptions, setLanguagesOptions] = useState({});
     const [verbForms, setVerbForms] = useState(clearVerbForms);
     const [validated, setValidated] = useState(false);
     const base = useRef(null);
 
+    const {binyans, languages} = useLoaderData();
+
     const handleSubmit = (event) => {
         const form = event.currentTarget;
-        const data = {};
-        data.infinitive = verbForms.infinitive;
-        data.binyan = verbForms.binyan;
-        data.root = verbForms.root;
-        data.verbTranslations = verbForms.verbTranslations;
-        data.verbForms = Object.values(verbForms.verbForms);
-        event.preventDefault();
         setValidated(true);
-        if (form.checkValidity() === true) {
-            fetch(`${API_URL}/verbs/add`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data)
-            }).then((response) => {
-                if (!response.ok) {
-                    throw new Error('Network response was not OK');
-                }
-                setVerbForms(clearVerbForms);
-                setValidated(false);
-            }).catch((error) => {
-                console.error('There has been a problem with your fetch operation:', error);
-            });
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+            // const data = {};
+            // data.infinitive = verbForms.infinitive;
+            // data.binyan = verbForms.binyan;
+            // data.root = verbForms.root;
+            // data.verbTranslations = verbForms.verbTranslations;
+            // data.verbForms = Object.values(verbForms.verbForms);
+            // fetch(`${API_URL}/verbs/add`, {
+            //     method: 'POST',
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     },
+            //     body: JSON.stringify(data)
+            // }).then((response) => {
+            //     if (!response.ok) {
+            //         throw new Error('Network response was not OK');
+            //     }
+            //     setVerbForms(clearVerbForms);
+            //     setValidated(false);
+            // }).catch((error) => {
+            //     console.error('There has been a problem with your fetch operation:', error);
+            // });
         }
     };
 
@@ -126,28 +135,11 @@ function AddVerbForm() {
 
     useEffect(() => {
         base.current.focus();
-        getBinyans().then(data => {
-            for (let [k, v] of Object.entries(data.binyans)) {
-                setBinyansOptions((prevOptions) => ({
-                    ...prevOptions,
-                    [k]: v,
-                }));
-            }
-        })
-
-        getLanguages().then(data => {
-            for (let [k, v] of Object.entries(data.languages)) {
-                setLanguagesOptions((prevOptions) => ({
-                    ...prevOptions,
-                    [k]: v,
-                }));
-            }
-        })
     }, [])
 
     return (
         <Col lg={{span: 10, offset: 1}}>
-            <Form className="mt-3 mb-3" noValidate validated={validated} onSubmit={handleSubmit}>
+            <Form as={RouterForm} className="mt-3 mb-3" noValidate validated={validated} onSubmit={handleSubmit} method="post">
                 <fieldset className="row mb-3">
                     <Form.Group as={Col} controlId="formBase">
                         <Form.Label>Base</Form.Label>
@@ -188,10 +180,24 @@ function AddVerbForm() {
                             value={verbForms.verbTranslations[0].language}
                             onChange={handleTranslationChange}
                         >
-                            <option disabled value="">Select language</option>
-                            {Object.entries(languagesOptions).map(item => (
-                                <option key={item[0]} value={item[1]}>{item[1]}</option>
-                            ))}
+                            <React.Suspense
+                                fallback={<option value="">Loading languages...</option>}
+                            >
+                                <Await
+                                    resolve={languages}
+                                    errorElement={<option value="">Error loading languages</option>}
+                                >
+                                    {(languages) => (
+                                        <>
+                                            <option disabled value="">Select language</option>
+                                            {Object.entries(languages.languages).map(item => (
+                                                <option key={item[0]} value={item[1]}>{item[1]}</option>
+                                            ))}
+                                        </>
+                                    )}
+
+                                </Await>
+                            </React.Suspense>
                         </Form.Select>
                     </Form.Group>
                 </fieldset>
@@ -204,10 +210,24 @@ function AddVerbForm() {
                             value={verbForms.binyan}
                             onChange={handleInputChange}
                         >
-                            <option disabled value="">Select binyan</option>
-                            {Object.entries(binyansOptions).map(item => (
-                                <option key={item[0]} value={item[1]}>{item[1]}</option>
-                            ))}
+                            <React.Suspense
+                                fallback={<option value="">Loading binyans...</option>}
+                            >
+                                <Await
+                                    resolve={binyans}
+                                    errorElement={<option value="">Error loading binyans</option>}
+                                >
+                                    {(binyans) => (
+                                        <>
+                                            <option disabled value="">Select binyan</option>
+                                            {Object.entries(binyans.binyans).map(item => (
+                                                <option key={item[0]} value={item[1]}>{item[1]}</option>
+                                            ))}
+                                        </>
+                                    )}
+
+                                </Await>
+                            </React.Suspense>
                         </Form.Select>
                     </Form.Group>
                     <Form.Group as={Col} controlId="formInfinitive">

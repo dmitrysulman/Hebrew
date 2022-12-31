@@ -4,7 +4,7 @@ import {createBrowserRouter, RouterProvider} from "react-router-dom";
 import AppContainer from "./layout/AppContainer";
 import ErrorPage from "./pages/ErrorPage";
 import RootPage from "./pages/RootPage";
-import AddVerbForm from "./pages/AddVerbForm";
+import AddVerbForm, {loader as addVerbFormLoader, action as addVerbFormAction} from "./pages/AddVerbForm";
 
 const router = createBrowserRouter([
     {
@@ -17,7 +17,9 @@ const router = createBrowserRouter([
             },
             {
                 path: "add-verb",
-                element: <AddVerbForm/>
+                element: <AddVerbForm/>,
+                loader: addVerbFormLoader,
+                action: addVerbFormAction
             }
         ]
     }

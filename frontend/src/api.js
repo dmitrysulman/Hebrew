@@ -29,47 +29,53 @@ const fetchApiPost = async (url) => {
 }
 
 const getVerbForms = async (base, binayn) => {
-    const response = await fetchApiGet( `/verbs/get_forms/${base}${binayn ? "?binyan=" + binayn : ""}`);
+    const response = await fetchApiGet(`/verbs/get_forms/${base}${binayn ? "?binyan=" + binayn : ""}`);
     return await response.json();
 }
 
 const getBinyans = async () => {
-    const response = await fetchApiGet( "/verbs/get_binyans");
+    const response = await fetchApiGet("/verbs/get_binyans");
     return await response.json();
 }
 
 const getLanguages = async () => {
-    const response = await fetchApiGet( "/verbs/get_languages");
+    const response = await fetchApiGet("/verbs/get_languages");
     return await response.json();
 }
 
-// const addVerb = async (event) => {
-//     const form = event.currentTarget;
-//     const data = {};
-//     data.infinitive = verbForms.infinitive;
-//     data.binyan = verbForms.binyan;
-//     data.root = verbForms.root;
-//     data.verbTranslations = verbForms.verbTranslations;
-//     data.verbForms = Object.values(verbForms.verbForms);
-//     event.preventDefault();
-//     setValidated(true);
-//     if (form.checkValidity() === true) {
-//         fetch(`${API_URL}/verbs/add`, {
-//             method: 'POST',
-//             headers: {
-//                 'Content-Type': 'application/json'
-//             },
-//             body: JSON.stringify(data)
-//         }).then((response) => {
-//             if (!response.ok) {
-//                 throw new Error('Network response was not OK');
-//             }
-//             setVerbForms(clearVerbForms);
-//             setValidated(false);
-//         }).catch((error) => {
-//             console.error('There has been a problem with your fetch operation:', error);
-//         });
-//     }
-// };
+const addVerb = async (formData) => {
+    const data = {};
+    data.infinitive = formData.infinitive;
+    delete formData.infinitive;
+    data.binyan = formData.binyan;
+    delete formData.binyan;
+    data.root = formData.root;
+    delete formData.root;
+    data.verbTranslations = [{
+        language: formData.language,
+        infinitiveTranslated: formData.infinitiveTranslated,
+    }];
+    delete formData.language;
+    delete formData.infinitiveTranslated;
+    data.verbForms = formData;
+    console.log(data);
+    // Object.values(verbForms.verbForms);
 
-export {getVerbForms, getBinyans, getLanguages};
+    // fetch(`${API_URL}/verbs/add`, {
+    //     method: 'POST',
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify(data)
+    // }).then((response) => {
+    //     if (!response.ok) {
+    //         throw new Error('Network response was not OK');
+    //     }
+    //     // setVerbForms(clearVerbForms);
+    //     // setValidated(false);
+    // }).catch((error) => {
+    //     console.error('There has been a problem with your fetch operation:', error);
+    // });
+};
+
+export {getVerbForms, getBinyans, getLanguages, addVerb};
