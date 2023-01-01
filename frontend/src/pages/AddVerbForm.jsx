@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from "react";
 import {Button, Col, Form} from "react-bootstrap";
 
 import {getVerbForms, getBinyans, getLanguages, addVerb} from "../api";
-import {Await, Form as RouterForm, defer, useLoaderData, redirect} from "react-router-dom";
+import {Await, Form as RouterForm, defer, useLoaderData, useNavigate} from "react-router-dom";
 
 const clearVerbForms = {
     base: "",
@@ -44,13 +44,6 @@ export function loader() {
     return defer({binyans, languages});
 }
 
-export async function action({request}) {
-    let formData = await request.formData();
-    console.log(Object.fromEntries(formData));
-    await addVerb(Object.fromEntries(formData));
-    return redirect("/");
-}
-
 function AddVerbForm() {
     const [verbForms, setVerbForms] = useState(clearVerbForms);
     const [validated, setValidated] = useState(false);
@@ -58,33 +51,27 @@ function AddVerbForm() {
 
     const {binyans, languages} = useLoaderData();
 
-    const handleSubmit = (event) => {
+    const navigate = useNavigate();
+
+    const handleSubmit = async (event) => {
         const form = event.currentTarget;
         setValidated(true);
-        if (form.checkValidity() === false) {
-            event.preventDefault();
+        event.preventDefault();
+        if (form.checkValidity() === true) {
+            const data = {};
+            data.infinitive = verbForms.infinitive;
+            data.binyan = verbForms.binyan;
+            data.root = verbForms.root;
+            data.verbTranslations = verbForms.verbTranslations;
+            data.verbForms = Object.values(verbForms.verbForms);
+            const response = await addVerb(data);
+            if (response.ok) {
+                navigate("/");
+            } else {
+                event.stopPropagation();
+            }
+        } else {
             event.stopPropagation();
-            // const data = {};
-            // data.infinitive = verbForms.infinitive;
-            // data.binyan = verbForms.binyan;
-            // data.root = verbForms.root;
-            // data.verbTranslations = verbForms.verbTranslations;
-            // data.verbForms = Object.values(verbForms.verbForms);
-            // fetch(`${API_URL}/verbs/add`, {
-            //     method: 'POST',
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     },
-            //     body: JSON.stringify(data)
-            // }).then((response) => {
-            //     if (!response.ok) {
-            //         throw new Error('Network response was not OK');
-            //     }
-            //     setVerbForms(clearVerbForms);
-            //     setValidated(false);
-            // }).catch((error) => {
-            //     console.error('There has been a problem with your fetch operation:', error);
-            // });
         }
     };
 
@@ -139,7 +126,8 @@ function AddVerbForm() {
 
     return (
         <Col lg={{span: 10, offset: 1}}>
-            <Form as={RouterForm} className="mt-3 mb-3" noValidate validated={validated} onSubmit={handleSubmit} method="post">
+            <Form as={RouterForm} className="mt-3 mb-3" noValidate validated={validated} onSubmit={handleSubmit}
+                  method="post">
                 <fieldset className="row mb-3">
                     <Form.Group as={Col} controlId="formBase">
                         <Form.Label>Base</Form.Label>
