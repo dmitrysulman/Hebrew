@@ -44,11 +44,11 @@ public class VerbServiceImpl implements VerbService {
         verbRepository.save(verb);
     }
 
-    private VerbFormDto getVerbFormDto(Tense tense,
-                                    Gender gender,
-                                    Number number,
-                                    Person person,
-                                    String form) {
+    private VerbFormDto buildVerbFormDto(Tense tense,
+                                         Gender gender,
+                                         Number number,
+                                         Person person,
+                                         String form) {
         return VerbFormDto.builder()
                 .tense(tense)
                 .gender(gender)
@@ -81,109 +81,109 @@ public class VerbServiceImpl implements VerbService {
     private VerbFormsDto buildVerbFormsDto(String base, VerbWord binyan) {
         Map<String, VerbFormDto> verbFormDtos = new HashMap<>();
         //present
-        verbFormDtos.put("presentTenseMaleSingular", getVerbFormDto(Tense.PRESENT,
+        verbFormDtos.put("presentTenseMaleSingular", buildVerbFormDto(Tense.PRESENT,
                 Gender.MALE,
                 Number.SINGULAR,
                 Person.NONE,
                 binyan.getPresentTenseMaleSingular(base)));
-        verbFormDtos.put("presentTenseFemaleSingular",getVerbFormDto(Tense.PRESENT,
+        verbFormDtos.put("presentTenseFemaleSingular", buildVerbFormDto(Tense.PRESENT,
                 Gender.FEMALE,
                 Number.SINGULAR,
                 Person.NONE,
                 binyan.getPresentTenseFemaleSingular(base)));
-        verbFormDtos.put("presentTenseMalePlural",getVerbFormDto(Tense.PRESENT,
+        verbFormDtos.put("presentTenseMalePlural", buildVerbFormDto(Tense.PRESENT,
                 Gender.MALE,
                 Number.PLURAL,
                 Person.NONE,
                 binyan.getPresentTenseMalePlural(base)));
-        verbFormDtos.put("presentTenseFemalePlural",getVerbFormDto(Tense.PRESENT,
+        verbFormDtos.put("presentTenseFemalePlural", buildVerbFormDto(Tense.PRESENT,
                 Gender.FEMALE,
                 Number.PLURAL,
                 Person.NONE,
                 binyan.getPresentTenseFemalePlural(base)));
         //past
-        verbFormDtos.put("pastTenseSingularFirstPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTenseSingularFirstPerson", buildVerbFormDto(Tense.PAST,
                 Gender.ALL,
                 Number.SINGULAR,
                 Person.FIRST,
                 binyan.getPastTenseSingularFirstPerson(base)));
-        verbFormDtos.put("pastTensePluralFirstPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTensePluralFirstPerson", buildVerbFormDto(Tense.PAST,
                 Gender.ALL,
                 Number.PLURAL,
                 Person.FIRST,
                 binyan.getPastTensePluralFirstPerson(base)));
-        verbFormDtos.put("pastTenseMaleSingularSecondPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTenseMaleSingularSecondPerson", buildVerbFormDto(Tense.PAST,
                 Gender.MALE,
                 Number.SINGULAR,
                 Person.SECOND,
                 binyan.getPastTenseMaleSingularSecondPerson(base)));
-        verbFormDtos.put("pastTenseFemaleSingularSecondPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTenseFemaleSingularSecondPerson", buildVerbFormDto(Tense.PAST,
                 Gender.FEMALE,
                 Number.SINGULAR,
                 Person.SECOND,
                 binyan.getPastTenseFemaleSingularSecondPerson(base)));
-        verbFormDtos.put("pastTenseMaleSingularThirdPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTenseMaleSingularThirdPerson", buildVerbFormDto(Tense.PAST,
                 Gender.MALE,
                 Number.SINGULAR,
                 Person.THIRD,
                 binyan.getPastTenseMaleSingularThirdPerson(base)));
-        verbFormDtos.put("pastTenseFemaleSingularThirdPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTenseFemaleSingularThirdPerson", buildVerbFormDto(Tense.PAST,
                 Gender.FEMALE,
                 Number.SINGULAR,
                 Person.THIRD,
                 binyan.getPastTenseFemaleSingularThirdPerson(base)));
-        verbFormDtos.put("pastTenseMalePluralSecondPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTenseMalePluralSecondPerson", buildVerbFormDto(Tense.PAST,
                 Gender.MALE,
                 Number.PLURAL,
                 Person.SECOND,
                 binyan.getPastTenseMalePluralSecondPerson(base)));
-        verbFormDtos.put("pastTenseFemalePluralSecondPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTenseFemalePluralSecondPerson", buildVerbFormDto(Tense.PAST,
                 Gender.FEMALE,
                 Number.PLURAL,
                 Person.SECOND,
                 binyan.getPastTenseFemalePluralSecondPerson(base)));
-        verbFormDtos.put("pastTensePluralThirdPerson",getVerbFormDto(Tense.PAST,
+        verbFormDtos.put("pastTensePluralThirdPerson", buildVerbFormDto(Tense.PAST,
                 Gender.ALL,
                 Number.PLURAL,
                 Person.THIRD,
                 binyan.getPastTensePluralThirdPerson(base)));
         //future
-        verbFormDtos.put("futureTenseSingularFirstPerson",getVerbFormDto(Tense.FUTURE,
+        verbFormDtos.put("futureTenseSingularFirstPerson", buildVerbFormDto(Tense.FUTURE,
                 Gender.ALL,
                 Number.SINGULAR,
                 Person.FIRST,
                 binyan.getFutureTenseSingularFirstPerson(base)));
-        verbFormDtos.put("futureTensePluralFirstPerson",getVerbFormDto(Tense.FUTURE,
+        verbFormDtos.put("futureTensePluralFirstPerson", buildVerbFormDto(Tense.FUTURE,
                 Gender.ALL,
                 Number.PLURAL,
                 Person.FIRST,
                 binyan.getFutureTensePluralFirstPerson(base)));
-        verbFormDtos.put("futureTenseMaleSingularSecondPerson",getVerbFormDto(Tense.FUTURE,
+        verbFormDtos.put("futureTenseMaleSingularSecondPerson", buildVerbFormDto(Tense.FUTURE,
                 Gender.MALE,
                 Number.SINGULAR,
                 Person.SECOND,
                 binyan.getFutureTenseMaleSingularSecondPerson(base)));
-        verbFormDtos.put("futureTenseFemaleSingularSecondPerson",getVerbFormDto(Tense.FUTURE,
+        verbFormDtos.put("futureTenseFemaleSingularSecondPerson", buildVerbFormDto(Tense.FUTURE,
                 Gender.FEMALE,
                 Number.SINGULAR,
                 Person.SECOND,
                 binyan.getFutureTenseFemaleSingularSecondPerson(base)));
-        verbFormDtos.put("futureTenseMaleSingularThirdPerson",getVerbFormDto(Tense.FUTURE,
+        verbFormDtos.put("futureTenseMaleSingularThirdPerson", buildVerbFormDto(Tense.FUTURE,
                 Gender.MALE,
                 Number.SINGULAR,
                 Person.THIRD,
                 binyan.getFutureTenseMaleSingularThirdPerson(base)));
-        verbFormDtos.put("futureTenseFemaleSingularThirdPerson",getVerbFormDto(Tense.FUTURE,
+        verbFormDtos.put("futureTenseFemaleSingularThirdPerson", buildVerbFormDto(Tense.FUTURE,
                 Gender.FEMALE,
                 Number.SINGULAR,
                 Person.THIRD,
                 binyan.getFutureTenseFemaleSingularThirdPerson(base)));
-        verbFormDtos.put("futureTensePluralSecondPerson",getVerbFormDto(Tense.FUTURE,
+        verbFormDtos.put("futureTensePluralSecondPerson", buildVerbFormDto(Tense.FUTURE,
                 Gender.ALL,
                 Number.PLURAL,
                 Person.SECOND,
                 binyan.getFutureTensePluralSecondPerson(base)));
-        verbFormDtos.put("futureTensePluralThirdPerson",getVerbFormDto(Tense.FUTURE,
+        verbFormDtos.put("futureTensePluralThirdPerson", buildVerbFormDto(Tense.FUTURE,
                 Gender.ALL,
                 Number.PLURAL,
                 Person.THIRD,
@@ -227,5 +227,10 @@ public class VerbServiceImpl implements VerbService {
             languagesDto.getLanguages().put(language.name(), language.toString());
         }
         return languagesDto;
+    }
+
+    @Override
+    public Optional<Integer> findIdByInfinitive(String infinitive) {
+        return verbRepository.findIdByInfinitive(infinitive);
     }
 }

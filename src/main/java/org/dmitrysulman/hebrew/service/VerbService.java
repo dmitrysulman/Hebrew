@@ -7,6 +7,7 @@ import org.dmitrysulman.hebrew.word.verb.VerbWord;
 import org.dmitrysulman.hebrew.dto.VerbDto;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface VerbService {
     List<VerbDto> findAll();
@@ -24,4 +25,6 @@ public interface VerbService {
     void registerBinyan(VerbWord.Binyan binyan, VerbWord verbWord);
 
     LanguagesDto getLanguages();
+
+    Optional<Integer> findIdByInfinitive(String infinitive);
 }
