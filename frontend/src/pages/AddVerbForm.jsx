@@ -75,6 +75,7 @@ function AddVerbForm() {
             });
             const response = await addVerb(data);
             if (response.ok) {
+                setVerbForms(clearVerbForms);
                 navigate("/");
             } else {
                 event.stopPropagation();

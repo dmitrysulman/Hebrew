@@ -10,7 +10,7 @@ import javax.validation.constraints.Size;
 @NoArgsConstructor
 @Getter
 @Setter
-public class VerbTranslationDto extends FieldKeyDto {
+public class VerbTranslationDto extends AbstractFieldKeyDto {
     private Language language;
 
     @Size(min = 2, max = 100)

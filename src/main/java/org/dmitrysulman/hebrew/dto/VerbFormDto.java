@@ -13,7 +13,7 @@ import javax.validation.constraints.Size;
 @Getter
 @Setter
 @Builder
-public class VerbFormDto extends FieldKeyDto {
+public class VerbFormDto extends AbstractFieldKeyDto {
     private Tense tense;
 
     private Person person;
