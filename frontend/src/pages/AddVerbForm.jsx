@@ -48,6 +48,7 @@ export function loader() {
 function AddVerbForm() {
     const [verbForms, setVerbForms] = useState(clearVerbForms);
     const [validated, setValidated] = useState(false);
+    const [fieldErrors, setFieldErrors] = useState({});
     const base = useRef(null);
 
     const {binyans, languages} = useLoaderData();
@@ -64,12 +65,33 @@ function AddVerbForm() {
             data.binyan = verbForms.binyan;
             data.root = verbForms.root;
             data.verbTranslations = verbForms.verbTranslations;
-            data.verbForms = Object.values(verbForms.verbForms);
+            verbForms.verbTranslations[0].fieldKey = "infinitiveTranslated";
+            // data.verbForms = Object.values(verbForms.verbForms);
+            data.verbForms = Object.entries(verbForms.verbForms).map(([k, v]) => {
+                return {
+                    ...v,
+                    fieldKey: k
+                };
+            });
             const response = await addVerb(data);
             if (response.ok) {
                 navigate("/");
             } else {
                 event.stopPropagation();
+                const errorResponse = await response.json();
+                if (errorResponse.validationErrors) {
+                    setFieldErrors(Object.fromEntries(
+                            errorResponse.validationErrors.map(
+                                element => {
+                                    return [
+                                        element.field, element.message
+                                    ];
+                                }
+                            )
+                        )
+                    );
+                    setValidated(false);
+                }
             }
         } else {
             event.stopPropagation();
@@ -142,7 +164,7 @@ function AddVerbForm() {
                         onBlur={handleBaseBlur}
                         refVal={base}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formInfinitiveTranslated"
@@ -151,6 +173,7 @@ function AddVerbForm() {
                         value={verbForms.verbTranslations[0].infinitiveTranslated}
                         onChange={handleTranslationChange}
                         error="Please provide a valid translation."
+                        fieldErrors={fieldErrors}
                     />
                     <Form.Group as={Col} controlId="formLanguage">
                         <Form.Label>Language</Form.Label>
@@ -217,7 +240,7 @@ function AddVerbForm() {
                         value={verbForms.infinitive}
                         onChange={handleInputChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formRoot"
@@ -226,7 +249,7 @@ function AddVerbForm() {
                         value={verbForms.root}
                         onChange={handleInputChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                 </fieldset>
                 <fieldset className="row mb-3">
@@ -238,7 +261,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.presentTenseMaleSingular.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formPresentTenseFemaleSingular"
@@ -247,7 +270,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.presentTenseFemaleSingular.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formPresentTenseMalePlural"
@@ -256,7 +279,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.presentTenseMalePlural.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formPresentTenseFemalePlural"
@@ -265,7 +288,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.presentTenseFemalePlural.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                 </fieldset>
                 <fieldset className="row mb-3">
@@ -277,7 +300,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTenseSingularFirstPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formPastTensePluralFirstPerson"
@@ -286,7 +309,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTensePluralFirstPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                 </fieldset>
                 <fieldset className="row mb-3">
@@ -297,7 +320,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTenseMaleSingularSecondPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formPastTenseFemaleSingularSecondPerson"
@@ -306,7 +329,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTenseFemaleSingularSecondPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formPastTenseMalePluralSecondPerson"
@@ -315,7 +338,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTenseMalePluralSecondPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formPastTenseFemalePluralSecondPerson"
@@ -324,7 +347,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTenseFemalePluralSecondPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                 </fieldset>
                 <fieldset className="row mb-3">
@@ -336,7 +359,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTenseMaleSingularThirdPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         className="col-lg-3"
@@ -346,7 +369,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTenseFemaleSingularThirdPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formPastTensePluralThirdPerson"
@@ -355,7 +378,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.pastTensePluralThirdPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                 </fieldset>
                 <fieldset className="row mb-3">
@@ -367,7 +390,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.futureTenseSingularFirstPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formFutureTensePluralFirstPerson"
@@ -376,7 +399,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.futureTensePluralFirstPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                 </fieldset>
                 <fieldset className="row mb-3">
@@ -388,7 +411,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.futureTenseMaleSingularSecondPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         className="col-lg-3"
@@ -398,7 +421,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.futureTenseFemaleSingularSecondPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formFutureTensePluralSecondPerson"
@@ -407,7 +430,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.futureTensePluralSecondPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                 </fieldset>
                 <fieldset className="row mb-3">
@@ -419,7 +442,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.futureTenseMaleSingularThirdPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         className="col-lg-3"
@@ -429,7 +452,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.futureTenseFemaleSingularThirdPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                     <AddVerbFormInputGroupText
                         id="formFutureTensePluralThirdPerson"
@@ -438,7 +461,7 @@ function AddVerbForm() {
                         value={verbForms.verbForms.futureTensePluralThirdPerson.form}
                         onChange={handleVerbFormsChange}
                         dir="rtl"
-                        error="Please provide a valid verb."
+                        fieldErrors={fieldErrors}
                     />
                 </fieldset>
                 <Button type="submit">

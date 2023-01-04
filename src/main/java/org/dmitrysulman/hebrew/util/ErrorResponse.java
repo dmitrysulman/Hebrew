@@ -1,7 +1,9 @@
 package org.dmitrysulman.hebrew.util;
 
+import org.dmitrysulman.hebrew.dto.FieldKeyDto;
 import org.springframework.validation.FieldError;
 
+import javax.validation.ConstraintViolation;
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +27,15 @@ public class ErrorResponse {
         if (validationErrors == null) {
             validationErrors = new ArrayList<>();
         }
-        validationErrors.add(new ValidationError(fieldError.getField(), fieldError.getDefaultMessage()));
+        String field = fieldError.getField();
+        if (fieldError.contains(ConstraintViolation.class)) {
+            Object fieldErrorSource = fieldError.unwrap(ConstraintViolation.class).getLeafBean();
+            if (fieldErrorSource instanceof FieldKeyDto) {
+                field = ((FieldKeyDto) fieldErrorSource).getFieldKey();
+            }
+        }
+
+        validationErrors.add(new ValidationError(field, fieldError.getDefaultMessage()));
     }
 
     public String getMessage() {

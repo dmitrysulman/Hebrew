@@ -14,7 +14,10 @@ import java.time.Instant;
 @ControllerAdvice
 public class RestResponseEntityExceptionHandler extends ResponseEntityExceptionHandler {
     @Override
-    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
+    protected ResponseEntity<Object> handleMethodArgumentNotValid(MethodArgumentNotValidException ex,
+                                                                  HttpHeaders headers,
+                                                                  HttpStatus status,
+                                                                  WebRequest request) {
         ErrorResponse errorResponse = new ErrorResponse(status.getReasonPhrase(), Instant.now(), status.value());
         for (FieldError fieldError : ex.getFieldErrors()) {
             errorResponse.addValidationError(fieldError);
