@@ -64,9 +64,11 @@ function AddVerbForm() {
             data.infinitive = verbForms.infinitive;
             data.binyan = verbForms.binyan;
             data.root = verbForms.root;
-            data.verbTranslations = verbForms.verbTranslations;
-            verbForms.verbTranslations[0].fieldKey = "infinitiveTranslated";
-            // data.verbForms = Object.values(verbForms.verbForms);
+            data.verbTranslations = [{
+                language: "RU",
+                infinitiveTranslated: verbForms.verbTranslations[0].infinitiveTranslated,
+                fieldKey: "infinitiveTranslated",
+            }];
             data.verbForms = Object.entries(verbForms.verbForms).map(([k, v]) => {
                 return {
                     ...v,
@@ -75,7 +77,6 @@ function AddVerbForm() {
             });
             const response = await addVerb(data);
             if (response.ok) {
-                setVerbForms(clearVerbForms);
                 navigate("/");
             } else {
                 event.stopPropagation();
@@ -120,9 +121,13 @@ function AddVerbForm() {
 
     const handleTranslationChange = (event) => {
         setVerbForms((prevVerbForms) => {
-            prevVerbForms.verbTranslations[0][event.target.name] = event.target.value;
+            const verbTranslations = [{
+                ...prevVerbForms.verbTranslations[0],
+                [event.target.name]: event.target.value
+            }];
             return {
                 ...prevVerbForms,
+                verbTranslations: verbTranslations
             }
         });
     }
