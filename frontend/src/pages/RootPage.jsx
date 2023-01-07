@@ -1,5 +1,5 @@
 import {Await, defer, useLoaderData} from "react-router-dom";
-import {Accordion, Col} from "react-bootstrap";
+import {Accordion, Alert, Col} from "react-bootstrap";
 import {getAllVerbs} from "../api";
 import React from "react";
 
@@ -15,21 +15,25 @@ function RootPage() {
     return <Col>
         <h2>All Verbs</h2>
         <React.Suspense
-            // fallback={<option value="">Loading languages...</option>}
+            fallback={<h4>Loading data...</h4>}
         >
             <Await
                 resolve={verbs}
-                // errorElement={<option value="">Error loading languages</option>}
+                errorElement={<Alert variant="danger">
+                    Error loading page...
+                </Alert>}
             >
-
                 {verbs =>
                     <Accordion className="mt-3 mb-3">
-                        {Object.keys(verbs).map((letter, index) => <>
-                                <Accordion.Item eventKey={index} key={index}>
-                                    <Accordion.Header>{letter}</Accordion.Header>
-                                    <Accordion.Body>Body0</Accordion.Body>
-                                </Accordion.Item>
-                            </>
+                        {Object.keys(verbs).map((letter, index) =>
+                            <Accordion.Item eventKey={index} key={index}>
+                                <Accordion.Header>{letter}</Accordion.Header>
+                                <Accordion.Body>{verbs[letter].map(verb =>
+                                    <div key={verb.id}>
+                                        {verb.root} {verb.infinitive} {verb.verbTranslations[0].infinitiveTranslated}
+                                    </div>
+                                )}</Accordion.Body>
+                            </Accordion.Item>
                         )}
                     </Accordion>
                 }
