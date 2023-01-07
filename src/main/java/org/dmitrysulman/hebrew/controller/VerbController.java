@@ -15,6 +15,7 @@ import org.springframework.web.server.ResponseStatusException;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/verbs")
@@ -36,6 +37,11 @@ public class VerbController {
     @GetMapping("")
     public List<VerbDto> getAllVerbs() {
         return verbService.findAll();
+    }
+
+    @GetMapping("/all")
+    public Map<Character, List<VerbDto>> getAllVerbsByFirstLetter() {
+        return verbService.findAllGroupByFirstLetter();
     }
 
     @PostMapping("/add")

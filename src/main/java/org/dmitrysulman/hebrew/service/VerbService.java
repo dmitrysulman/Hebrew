@@ -7,10 +7,13 @@ import org.dmitrysulman.hebrew.word.verb.VerbWord;
 import org.dmitrysulman.hebrew.dto.VerbDto;
 
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 public interface VerbService {
     List<VerbDto> findAll();
+
+    Map<Character, List<VerbDto>> findAllGroupByFirstLetter();
 
     void save(VerbDto verbDto);
 

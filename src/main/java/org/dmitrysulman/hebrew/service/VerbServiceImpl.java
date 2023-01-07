@@ -13,6 +13,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
 
+import static java.util.stream.Collectors.*;
+
 @Service
 @Transactional(readOnly = true)
 public class VerbServiceImpl implements VerbService {
@@ -29,10 +31,31 @@ public class VerbServiceImpl implements VerbService {
 
     @Override
     public List<VerbDto> findAll() {
-        List<Verb> verbs = verbRepository.findAll();
+        List<Verb> verbs = getAllVerbsWithTranslationsAndVerbForms();
+
+        return getVerbDtoListFromVerbList(verbs);
+    }
+
+    private List<VerbDto> getVerbDtoListFromVerbList(List<Verb> verbs) {
         return verbs.stream()
                 .map(verb -> modelMapper.map(verb, VerbDto.class))
                 .toList();
+    }
+
+    private List<Verb> getAllVerbsWithTranslationsAndVerbForms() {
+        List<Verb> verbs = verbRepository.findAllWithTranslations();
+        verbs = !verbs.isEmpty() ? verbRepository.findAllWithVerbForms() : verbs;
+
+        return verbs;
+    }
+
+    @Override
+    public Map<Character, List<VerbDto>> findAllGroupByFirstLetter() {
+        List<Verb> verbs = getAllVerbsWithTranslationsAndVerbForms();
+        List<VerbDto> verbDtoList = getVerbDtoListFromVerbList(verbs);
+
+        return verbDtoList.stream()
+                .collect(groupingBy(verbDto -> verbDto.getRoot().charAt(0), TreeMap::new, toList()));
     }
 
     @Override

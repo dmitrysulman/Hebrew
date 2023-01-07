@@ -43,4 +43,9 @@ const addVerb = async (data) => {
     return await fetchApiPost("/verbs/add", data);
 };
 
-export {getVerbForms, getBinyans, getLanguages, addVerb};
+const getAllVerbs = async () => {
+    const response = await fetchApiGet("/verbs/all");
+    return await response.json();
+}
+
+export {getVerbForms, getBinyans, getLanguages, addVerb, getAllVerbs};

@@ -155,8 +155,7 @@ function AddVerbForm() {
         base.current.focus();
     }, [])
 
-    return (
-        <Col lg={{span: 10, offset: 1}}>
+    return <Col lg={{span: 10, offset: 1}}>
             <h2>Add new verb</h2>
             <Form as={RouterForm} className="mt-3 mb-3" noValidate validated={validated} onSubmit={handleSubmit}
                   method="post">
@@ -196,7 +195,7 @@ function AddVerbForm() {
                                     resolve={languages}
                                     errorElement={<option value="">Error loading languages</option>}
                                 >
-                                    {(languages) => (
+                                    {languages => (
                                         <>
                                             <option disabled value="">Select language</option>
                                             {Object.entries(languages.languages).map(item => (
@@ -226,7 +225,7 @@ function AddVerbForm() {
                                     resolve={binyans}
                                     errorElement={<option value="">Error loading binyans</option>}
                                 >
-                                    {(binyans) => (
+                                    {binyans => (
                                         <>
                                             <option disabled value="">Select binyan</option>
                                             {Object.entries(binyans.binyans).map(item => (
@@ -475,7 +474,6 @@ function AddVerbForm() {
                 </Button>
             </Form>
         </Col>
-    );
 }
 
 export default AddVerbForm
