@@ -1,0 +1,3627 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:pro="http://www.liquibase.org/xml/ns/pro" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/pro http://www.liquibase.org/xml/ns/pro/liquibase-pro-latest.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-latest.xsd">
+    <changeSet author="d1304 (generated)" id="1673453690946-1">
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="15"/>
+            <column name="infinitive" value="לכתוב"/>
+            <column name="root" value="כתב"/>
+            <column name="binyan" value="PAAL_EFOL"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="16"/>
+            <column name="infinitive" value="לגור"/>
+            <column name="root" value="גור"/>
+            <column name="binyan" value="PAAL_AINVAV"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="17"/>
+            <column name="infinitive" value="לשיר"/>
+            <column name="root" value="שיר"/>
+            <column name="binyan" value="PAAL_AINYOD"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="18"/>
+            <column name="infinitive" value="לקנות"/>
+            <column name="root" value="קנה"/>
+            <column name="binyan" value="PAAL_LAMEDHEY"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="20"/>
+            <column name="infinitive" value="לקרוא"/>
+            <column name="root" value="קרא"/>
+            <column name="binyan" value="PAAL_EFAL"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="21"/>
+            <column name="infinitive" value="ללמוד"/>
+            <column name="root" value="למד"/>
+            <column name="binyan" value="PAAL_EFAL"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="22"/>
+            <column name="infinitive" value="לנסוע"/>
+            <column name="root" value="נסע"/>
+            <column name="binyan" value="PAAL_PEYNUN"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="24"/>
+            <column name="infinitive" value="לאהוב"/>
+            <column name="root" value="אהב"/>
+            <column name="binyan" value="PAAL_PEYALEF"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="25"/>
+            <column name="infinitive" value="לנוח"/>
+            <column name="root" value="נוח"/>
+            <column name="binyan" value="PAAL_AINVAV"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="31"/>
+            <column name="infinitive" value="לשים"/>
+            <column name="root" value="שים"/>
+            <column name="binyan" value="PAAL_AINYOD"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="32"/>
+            <column name="infinitive" value="לשאול"/>
+            <column name="root" value="שאל"/>
+            <column name="binyan" value="PAAL_EFAL"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="33"/>
+            <column name="infinitive" value="ללבוש"/>
+            <column name="root" value="לבש"/>
+            <column name="binyan" value="PAAL_EFAL"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="34"/>
+            <column name="infinitive" value="לדאוג"/>
+            <column name="root" value="דאג"/>
+            <column name="binyan" value="PAAL_EFAL"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="35"/>
+            <column name="infinitive" value="לרוץ"/>
+            <column name="root" value="רוץ"/>
+            <column name="binyan" value="PAAL_AINVAV"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="36"/>
+            <column name="infinitive" value="לרצות"/>
+            <column name="root" value="רצה"/>
+            <column name="binyan" value="PAAL_LAMEDHEY"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="37"/>
+            <column name="infinitive" value="לבדוק"/>
+            <column name="root" value="בדק"/>
+            <column name="binyan" value="PAAL_EFOL"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="38"/>
+            <column name="infinitive" value="לענות"/>
+            <column name="root" value="ענה"/>
+            <column name="binyan" value="PAAL_LAMEDHEY"/>
+        </insert>
+        <insert tableName="verbs">
+            <column name="id" valueNumeric="39"/>
+            <column name="infinitive" value="לעמוד"/>
+            <column name="root" value="עמד"/>
+            <column name="binyan" value="PAAL_EFOL"/>
+        </insert>
+    </changeSet>
+    <changeSet author="d1304 (generated)" id="1673453690946-2">
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="22"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="כתבו"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="23"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אכתוב"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="24"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="כתב"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="25"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="כתבת"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="26"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="כותבים"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="27"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="כתבה"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="28"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="כותבות"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="29"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="כתבתן"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="30"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תכתוב"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="31"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="כותבת"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="32"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תכתוב"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="33"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="כתבתם"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="34"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תכתבו"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="35"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נכתוב"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="36"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="כתבנו"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="37"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="כתבתי"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="38"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="כתבת"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="39"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תכתבי"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="40"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="כותב"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="41"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="יכתוב"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="42"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="יכתבו"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="43"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="גרו"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="44"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אגור"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="45"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="גר"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="46"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="גרת"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="47"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="גרים"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="48"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="גרה"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="49"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="גרות"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="50"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="גרתן"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="51"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תגור"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="52"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="גרה"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="53"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תגור"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="54"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="גרתם"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="55"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תגורו"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="56"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נגור"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="57"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="גרנו"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="58"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="גרתי"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="59"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="גרת"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="60"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תגורי"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="61"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="גר"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="62"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="יגור"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="63"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="יגורו"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="64"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שרו"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="65"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אשיר"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="66"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שר"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="67"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שרת"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="68"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שרים"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="69"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שרה"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="70"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שרות"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="71"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שרתן"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="72"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תשיר"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="73"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שרה"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="74"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תשיר"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="75"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שרתם"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="76"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תשירו"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="77"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נשיר"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="78"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שרנו"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="79"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שרתי"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="80"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שרת"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="81"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תשירי"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="82"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שר"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="83"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ישיר"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="84"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ישירו"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="85"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="קנו"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="86"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אקנה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="87"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קנה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="88"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קנית"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="89"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קונים"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="90"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קנתה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="91"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קונות"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="92"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קניתן"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="93"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תקנה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="94"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קונה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="95"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תקנה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="96"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קניתם"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="97"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תקנו"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="98"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נקנה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="99"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="קנינו"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="100"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="קניתי"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="101"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קנית"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="102"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תקני"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="103"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קונה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="104"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="יקנה"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="105"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="יקנו"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="127"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="קראו"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="128"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אקרא"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="129"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קרא"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="130"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קראת"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="131"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קוראים"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="132"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קראה"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="133"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קוראות"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="134"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קראתן"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="135"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תקרא"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="136"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="קוראת"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="137"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תקרא"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="138"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קראתם"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="139"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תקראו"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="140"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נקרא"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="141"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="קראנו"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="142"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="קראתי"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="143"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קראת"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="144"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תקראי"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="145"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="קורא"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="146"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="יקרא"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="147"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="יקראו"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="148"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="למדו"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="149"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אלמד"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="150"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="למד"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="151"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="למדת"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="152"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="לומדים"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="153"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="למדה"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="154"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="לומדות"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="155"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="למדתן"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="156"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תלמד"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="157"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="לומדת"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="158"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תלמד"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="159"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="למדתם"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="160"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תלמדו"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="161"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נלמד"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="162"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="למדנו"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="163"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="למדתי"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="164"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="למדת"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="165"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תלמדי"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="166"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="לומד"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="167"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ילמד"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="168"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ילמדו"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="169"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נסעו"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="170"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אסע"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="171"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נסע"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="172"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נסעת"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="173"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נוסעים"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="174"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נסעה"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="175"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נוסעות"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="176"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נסעתן"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="177"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תיסע"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="178"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נוסעת"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="179"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תיסע"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="180"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נסעתם"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="181"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תיסעו"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="182"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ניסע"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="183"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נסענו"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="184"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נסעתי"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="185"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נסעת"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="186"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תיסעי"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="187"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נוסע"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="188"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ייסע"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="189"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ייסעו"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="190"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אהבו"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="191"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אוהב"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="192"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="אהב"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="193"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="אהבת"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="194"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="אוהבים"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="195"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="אהבה"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="196"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="אוהבות"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="197"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="אהבתן"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="198"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תאהב"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="199"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="אוהבת"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="200"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תאהב"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="201"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="אהבתם"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="202"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תאהבו"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="203"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נאהב"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="204"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אהבנו"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="205"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אהבתי"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="206"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="אהבת"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="207"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תאהבי"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="208"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="אוהב"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="209"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="יאהב"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="210"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="יאהבו"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="211"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נחו"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="212"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אנוח"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="213"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נח"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="214"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נחת"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="215"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נחים"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="216"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נחה"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="217"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נחות"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="218"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נחתן"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="219"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תנוח"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="220"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="נחה"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="221"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תנוח"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="222"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נחתם"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="223"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תנוחו"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="224"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ננוח"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="225"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נחנו"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="226"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נחתי"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="227"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נחת"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="228"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תנוחי"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="229"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="נח"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="230"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ינוח"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="231"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ינוחו"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="232"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שמו"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="233"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אשים"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="234"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שם"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="235"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שמת"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="236"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שמים"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="237"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שמה"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="238"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שמות"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="239"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שמתן"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="240"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תשים"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="241"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שמה"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="242"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תשים"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="243"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שמתם"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="244"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תשימו"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="245"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נשים"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="246"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שמנו"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="247"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שמתי"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="248"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שמת"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="249"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תשימי"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="250"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שם"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="251"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ישים"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="252"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ישימו"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="253"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שאלו"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="254"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אשאל"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="255"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שאל"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="256"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שאלת"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="257"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שואלים"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="258"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שאלה"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="259"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שואלות"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="260"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שאלתן"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="261"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תשאל"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="262"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="שואלת"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="263"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תשאל"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="264"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שאלתם"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="265"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תשאלו"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="266"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נשאל"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="267"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שאלנו"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="268"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="שאלתי"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="269"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שאלת"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="270"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תשאלי"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="271"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="שואל"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="272"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ישאל"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="273"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ישאלו"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="274"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="לבשו"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="275"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אלבש"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="276"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="לבש"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="277"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="לבשת"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="278"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="לובשים"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="279"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="לבשה"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="280"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="לובשות"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="281"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="לבשתן"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="282"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תלבש"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="283"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="לובשת"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="284"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תלבש"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="285"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="לבשתם"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="286"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תלבשו"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="287"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נלבש"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="288"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="לבשנו"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="289"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="לבשתי"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="290"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="לבשת"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="291"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תלבשי"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="292"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="לובש"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="293"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ילבש"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="294"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ילבשו"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="295"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="דאגו"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="296"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אדאג"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="297"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="דאג"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="298"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="דאגת"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="299"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="דואגים"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="300"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="דאגה"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="301"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="דואגות"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="302"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="דאגתן"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="303"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תדאג"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="304"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="דואגת"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="305"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תדאג"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="306"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="דאגתם"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="307"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תדאגו"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="308"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נדאג"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="309"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="דאגנו"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="310"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="דאגתי"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="311"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="דאגת"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="312"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תדאגי"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="313"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="דואג"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="314"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ידאג"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="315"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ידאגו"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="316"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="רצו"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="317"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ארוץ"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="318"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רץ"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="319"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רצת"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="320"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רצים"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="321"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רצה"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="322"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רצות"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="323"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רצתן"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="324"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תרוץ"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="325"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רצה"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="326"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תרוץ"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="327"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רצתם"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="328"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תרוצו"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="329"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נרוץ"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="330"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="רצנו"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="331"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="רצתי"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="332"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רצת"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="333"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תרוצי"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="334"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רץ"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="335"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ירוץ"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="336"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ירוצו"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="337"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="רצו"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="338"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ארצה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="339"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רצה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="340"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רצית"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="341"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רוצים"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="342"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רצתה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="343"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רוצות"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="344"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רציתן"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="345"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תרצה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="346"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="רוצה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="347"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תרצה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="348"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רציתם"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="349"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תרצו"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="350"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נרצה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="351"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="רצינו"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="352"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="רציתי"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="353"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רצית"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="354"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תרצי"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="355"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="רוצה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="356"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ירצה"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="357"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ירצו"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="358"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="בדקו"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="359"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אבדוק"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="360"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="בדק"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="361"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="בדקת"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="362"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="בודקים"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="363"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="בדקה"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="364"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="בודקות"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="365"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="בדקתן"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="366"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תבדוק"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="367"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="בודקת"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="368"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תבדוק"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="369"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="בדקתם"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="370"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תבדקו"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="371"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נבדוק"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="372"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="בדקנו"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="373"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="בדקתי"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="374"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="בדקת"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="375"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תבדקי"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="376"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="בודק"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="377"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="יבדוק"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="378"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="יבדקו"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="379"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ענו"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="380"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אענה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="381"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ענה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="382"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="ענית"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="383"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="עונים"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="384"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="ענתה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="385"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="עונות"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="386"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="עניתן"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="387"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תענה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="388"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="עונה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="389"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תענה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="390"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="עניתם"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="391"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תענו"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="392"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נענה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="393"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="ענינו"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="394"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="עניתי"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="395"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="ענית"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="396"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תעני"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="397"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="עונה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="398"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="יענה"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="399"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="יענו"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="400"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="עמדו"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="401"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="אעמוד"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="402"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="עמד"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="403"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="עמדת"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="404"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="עומדים"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="405"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="עמדה"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="406"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="עומדות"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="407"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="עמדתן"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="408"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="תעמוד"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="409"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="עומדת"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="410"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תעמוד"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="411"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="עמדתם"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="412"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="תעמדו"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="413"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="נעמוד"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="414"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="עמדנו"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="415"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="FIRST"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="עמדתי"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="416"/>
+            <column name="tense" value="PAST"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="עמדת"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="417"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="SECOND"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="FEMALE"/>
+            <column name="form" value="תעמדי"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="418"/>
+            <column name="tense" value="PRESENT"/>
+            <column name="person" value="NONE"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="עומד"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="419"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="SINGULAR"/>
+            <column name="gender" value="MALE"/>
+            <column name="form" value="יעמוד"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+        <insert tableName="verb_forms">
+            <column name="id" valueNumeric="420"/>
+            <column name="tense" value="FUTURE"/>
+            <column name="person" value="THIRD"/>
+            <column name="number" value="PLURAL"/>
+            <column name="gender" value="ALL"/>
+            <column name="form" value="יעמדו"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+    </changeSet>
+    <changeSet author="d1304 (generated)" id="1673453690946-3">
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="7"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="писать"/>
+            <column name="verb_id" valueNumeric="15"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="8"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="жить"/>
+            <column name="verb_id" valueNumeric="16"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="9"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="петь"/>
+            <column name="verb_id" valueNumeric="17"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="10"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="покупать"/>
+            <column name="verb_id" valueNumeric="18"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="12"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="читать"/>
+            <column name="verb_id" valueNumeric="20"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="13"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="учиться"/>
+            <column name="verb_id" valueNumeric="21"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="14"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="ехать"/>
+            <column name="verb_id" valueNumeric="22"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="15"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="любить"/>
+            <column name="verb_id" valueNumeric="24"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="16"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="отдыхать"/>
+            <column name="verb_id" valueNumeric="25"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="17"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="класть, положить"/>
+            <column name="verb_id" valueNumeric="31"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="18"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="спрашивать"/>
+            <column name="verb_id" valueNumeric="32"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="19"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="носить одежду"/>
+            <column name="verb_id" valueNumeric="33"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="20"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="волноваться"/>
+            <column name="verb_id" valueNumeric="34"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="21"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="бегать, бежать"/>
+            <column name="verb_id" valueNumeric="35"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="22"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="хотеть"/>
+            <column name="verb_id" valueNumeric="36"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="23"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="проверять"/>
+            <column name="verb_id" valueNumeric="37"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="24"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="отвечать"/>
+            <column name="verb_id" valueNumeric="38"/>
+        </insert>
+        <insert tableName="verb_translations">
+            <column name="id" valueNumeric="25"/>
+            <column name="language" value="RU"/>
+            <column name="infinitive_translated" value="стоять"/>
+            <column name="verb_id" valueNumeric="39"/>
+        </insert>
+    </changeSet>
+</databaseChangeLog>
